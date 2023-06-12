@@ -1,6 +1,6 @@
 import express from "express";
 import router from "./routes/router.js";
-
+import session from "express-session";
 
 
 const app = express();
@@ -9,6 +9,16 @@ const hostname = "localhost";
 
 const BASE_URL = `http://${hostname}:${port}`;
 
+// on indique à express où sont les fichiers statiques js, image et css
+app.use(express.static("public"));
+
+//initialisation du système de sessions
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {maxAge: 3600000}
+}));
 
 // utilisation des template EJS grâce au modules npm "ejs"
 app.set('views', './views');
