@@ -1,1 +1,21 @@
 <h1>Gestion d'actualités</h1>
+
+<table>
+	<thead>
+			<th>Titre</th>
+            <th>Contenu</th>
+            <th></th>
+            <th></th>
+	</thead>
+	<tbody>
+		<% for(let i = 0; i < actus.length; i++) { %>
+			<tr data-id="<%=actus[i].id%>">
+				<td>
+					<a href="/actualites/<%=actus[i].id%>"><%=actus[i].titre%></a>
+				</td>
+				<td><%=actus[i].contenu.substring(0, 30)%> ...</td>
+                <td><%=actus[i].date.toLocaleDateString()%></td>
+			</tr>
+		<% } %>
+	</tbody>
+</table>
