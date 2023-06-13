@@ -12,7 +12,7 @@ import {Register, RegisterSubmit} from '../controllers/register.js'; //, Registe
 import { Login, LoginSubmit, Logout } from '../controllers/login.js';
 import Admin from "../controllers/admin.js";
 import Actualites from "../controllers/actualites.js" //import {Actualites, ActualitesSubmit} from "../controllers/actualites.js"
-
+import Classes from "../controllers/classes.js"
 
 
 //liste des routes
@@ -43,6 +43,19 @@ router.get('/admin', Admin);
 //GESTION D'ACTUALITES
 
 router.get('/admin/actualites', Actualites)
+
+
+
+//GESTION DES CLASSES
+
+router.get('/admin/classes', Classes)
+
+
+
+//GESTION DES MEDIAS
+
+router.get('/admin/medias', Medias)
+
 
 
 
