@@ -11,6 +11,10 @@ import HomeController from "../controllers/home.js";  //page d'accueil
 import {Register, RegisterSubmit} from '../controllers/register.js'; //, RegisterSubmit
 import { Login, LoginSubmit, Logout } from '../controllers/login.js';
 import Admin from "../controllers/admin.js";
+import Actualites from "../controllers/actualites.js" //import {Actualites, ActualitesSubmit} from "../controllers/actualites.js"
+
+
+
 //liste des routes
 
 //HOME PAGE
@@ -35,6 +39,10 @@ router.get('/logout', Logout);
 //ACCUEIL ADMIN
 
 router.get('/admin', Admin);
+
+//GESTION D'ACTUALITES
+
+router.get('/admin/actualites', Actualites)
 
 
 
