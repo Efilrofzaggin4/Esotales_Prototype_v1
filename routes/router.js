@@ -11,7 +11,10 @@ import HomeController from "../controllers/home.js";  //page d'accueil
 import {Register, RegisterSubmit} from '../controllers/register.js'; //, RegisterSubmit
 import { Login, LoginSubmit, Logout } from '../controllers/login.js';
 import Admin from "../controllers/admin.js";
+
 import Actualites from "../controllers/actualites.js" //import {Actualites, ActualitesSubmit} from "../controllers/actualites.js"
+import {AddActuForm, AddActuSubmit} from "../controllers/addActu.js"
+
 import Classes from "../controllers/classes.js"
 import Medias from "../controllers/medias.js"
 
@@ -44,7 +47,9 @@ router.get('/admin', Admin);
 
 router.get('/admin/actualites', Actualites)
 
+router.get('/admin/actualites/addActu', AddActuForm)
 
+router.post('/admin/actualites/addActu', AddActuSubmit)
 
 //GESTION DES CLASSES
 
