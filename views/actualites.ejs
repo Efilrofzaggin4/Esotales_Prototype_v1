@@ -15,9 +15,15 @@
 				</td>
 				<td><%=actus[i].contenu.substring(0, 30)%> ...</td>
                 <td><%=actus[i].date.toLocaleDateString()%></td>
+				<td>
+                    <a class="edit" href="/admin/actualites/editActu/<%=actus[i].id%>">edit</a>
+                    <button class="js-remove-actu-button" data-id="<%=actus[i].id%>">supp</button>
+                </td>
 			</tr>
 		<% } %>
 	</tbody>
 </table>
 
 <a class="back" href="actualites/addActu">Ajouter une actualité</a>
+
+<script language="javascript" src="/js/index.js"></script>

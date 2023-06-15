@@ -12,7 +12,7 @@ import {Register, RegisterSubmit} from '../controllers/register.js'; //, Registe
 import { Login, LoginSubmit, Logout } from '../controllers/login.js';
 import Admin from "../controllers/admin.js";
 
-import Actualites from "../controllers/actualites.js" //import {Actualites, ActualitesSubmit} from "../controllers/actualites.js"
+import {Actualites, DeleteActu, EditActu, EditActuSubmit} from "../controllers/actualites.js" //import {Actualites, ActualitesSubmit} from "../controllers/actualites.js"
 import {AddActuForm, AddActuSubmit} from "../controllers/addActu.js"
 
 import Classes from "../controllers/classes.js"
@@ -47,9 +47,15 @@ router.get('/admin', Admin);
 
 router.get('/admin/actualites', Actualites)
 
+router.delete('/admin/actualites/:id', DeleteActu);
+
 router.get('/admin/actualites/addActu', AddActuForm)
 
 router.post('/admin/actualites/addActu', AddActuSubmit)
+
+router.get('/admin/actualites/editActu/:id', EditActu)
+
+router.post('/admin/actualites/editActu/:id', EditActuSubmit)
 
 //GESTION DES CLASSES
 
