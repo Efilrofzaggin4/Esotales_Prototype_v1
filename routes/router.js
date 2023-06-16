@@ -16,7 +16,9 @@ import {Actualites, DeleteActu, EditActu, EditActuSubmit} from "../controllers/a
 import {AddActuForm, AddActuSubmit} from "../controllers/addActu.js"
 
 import Classes from "../controllers/classes.js"
-import Medias from "../controllers/medias.js"
+
+import {Video, DeleteVideo, EditVideo, EditVideoSubmit} from "../controllers/videos.js"
+import AddVideo from "../controllers/addVideo.js";
 
 //liste des routes
 
@@ -57,6 +59,8 @@ router.get('/admin/actualites/editActu/:id', EditActu)
 
 router.post('/admin/actualites/editActu/:id', EditActuSubmit)
 
+
+
 //GESTION DES CLASSES
 
 router.get('/admin/classes', Classes)
@@ -65,7 +69,11 @@ router.get('/admin/classes', Classes)
 
 //GESTION DES MEDIAS
 
-router.get('/admin/medias', Medias)
+router.get('/admin/videos', Video)
+
+router.get('/admin/videos/addVideo', AddVideo)
+
+router.delete('/admin/videos/:id', DeleteVideo);
 
 
 

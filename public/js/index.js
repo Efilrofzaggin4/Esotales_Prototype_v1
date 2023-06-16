@@ -31,3 +31,30 @@ function deleteActu(actuId) {
     });
 }
 
+const deleteVideoButton = document.querySelectorAll(".js-remove-video-button");
+
+
+deleteVideoButton.forEach(button => {
+  button.addEventListener('click', () => {
+    const videoId = button.getAttribute('data-id');
+    // Appeler la fonction deletePost avec l'ID de l'article
+    deleteActu(videoId);
+  });
+});
+
+function deleteActu(videoId) {
+  fetch(`/admin/videos/${videoId}`, {method: 'DELETE'})
+    .then(response => {
+      if (response.ok) {
+        const deletedRow = document.querySelector(`tr[data-id="${videoId}"]`);
+        if (deletedRow) {
+          deletedRow.remove(); // Supprimer la ligne du tableau correspondant à l'article supprimé
+        }} else {
+          throw new Error('Erreur lors de la suppression de la video');
+        }
+    })
+    .catch(error => {
+      console.error(error);
+      //gestion d'erreur
+    });
+  }
