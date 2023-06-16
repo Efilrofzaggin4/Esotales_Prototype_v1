@@ -11,7 +11,7 @@ export const Actualites = (req, res) => {
       console.error(error);
       res.status(500).send('Erreur de base de données');
     } else {
-      res.render('actualites', { actus: actus });
+      res.render('layoutAdmin', {template :  'actualites',  actus: actus });
     }
   });
 };

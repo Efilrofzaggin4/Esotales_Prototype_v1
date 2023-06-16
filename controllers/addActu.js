@@ -38,11 +38,13 @@ export const AddActuSubmit = (req, res) => {
         
         // le chemin d'acces du fichier dans le tmp
         const path = files.myfile.filepath
+        console.log(path)
         //recupere l'extension du fichier
         const extension = files.myfile.originalFilename.split(".").pop()
         // le dosssier finale
-        const newPath = "public/upload/"+files.myfile.newFilename+"."+extension
-        
+        const newPath = "public/images/actualités/"+files.myfile.newFilename+"."+extension
+        console.log(newPath)
+
         // // option 1
         // if(!authorizedExtention.includes(extension)){
         //     return res.status(500).send("Le fichier n'a pas la bonne extention")
@@ -50,17 +52,19 @@ export const AddActuSubmit = (req, res) => {
         
         // option 2
         if(!authorizedExtention2.includes(files.myfile.mimetype)){
-            return res.status(500).send("Le fichier n'a pas la bonne extention")
+            return res.status(500).send("Le fichier n'a pas la bonne extension")
         }
+        const displayPath = "images/actualités/"+files.myfile.newFilename+"."+extension
+        console.log(displayPath)
         
         fs.copyFile(path, newPath, (err) => {
             if(err) {
                 console.log(err)
             }
         })
-
+        
         //pensez a changer utilisateurs-id à l'avenir
-        pool.query('INSERT INTO Actualites (id, titre, contenu, utilisateur_id, date) VALUES (?, ?, ?, "a1b3e628-1179-4075-8ad7-06c1bc471438", CURRENT_TIME())', [uuidv4(), fields.titre, fields.contenu, fields.Utilisateurs ], function (error, result, fields) {
+        pool.query('INSERT INTO Actualites (id, titre, contenu, utilisateur_id, image_url, date) VALUES (?, ?, ?, ?, ?,  CURRENT_TIME())', [uuidv4(), fields.titre, fields.contenu, "a1b3e628-1179-4075-8ad7-06c1bc471438", displayPath], function (error, result, fields) {
 	        console.log(error)
 		        // une fois le post créé en BDD on redirige vers la page / (home)
 		        res.redirect('/admin/actualites');

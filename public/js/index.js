@@ -12,7 +12,7 @@ deleteActuButtons.forEach(button => {
 
 // Fonction deletePost pour envoyer une requête de suppression à votre backend
 function deleteActu(actuId) {
-  // Effectuer une requête Ajax ou une requête fetch pour appeler votre endpoint de suppression
+ //requête fetch 
   // en passant l'ID de l'article
   // fetch :
   fetch(`/admin/actualites/${actuId}`, {method: 'DELETE'})

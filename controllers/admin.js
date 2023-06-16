@@ -1,5 +1,5 @@
 export default (req, res) => {
-    res.render('admin');
+    res.render('layoutAdmin', {template:'admin'});
   };
 
 

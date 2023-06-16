@@ -1,11 +1,12 @@
-<h1>Gestion d'actualités</h1>
+<h2>Gestion d'actualités</h2>
 
-<table>
+<table class="admin-table">
 	<thead>
 			<th>Titre</th>
             <th>Contenu</th>
             <th></th>
             <th></th>
+			<th></th>
 	</thead>
 	<tbody>
 		<% for(let i = 0; i < actus.length; i++) { %>
@@ -15,10 +16,14 @@
 				</td>
 				<td><%=actus[i].contenu.substring(0, 30)%> ...</td>
                 <td><%=actus[i].date.toLocaleDateString()%></td>
+				
 				<td>
                     <a class="edit" href="/admin/actualites/editActu/<%=actus[i].id%>">edit</a>
                     <button class="js-remove-actu-button" data-id="<%=actus[i].id%>">supp</button>
                 </td>
+				<td><img class="mini-img"
+					src="/<%=actus[i].image_url%>"
+					alt="<%=actus[i].titre%>"></td>
 			</tr>
 		<% } %>
 	</tbody>

@@ -1,0 +1,18 @@
+.admin-header{
+    background-image: url("/images/redEyedElfWoman.png");
+    background-position: center;
+    background-position-y: -300px;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+h1{
+  padding: 100px;
+  padding: 100px;
+}
+
+.mini-img {
+  width: 100px;
+  height: 70px;
+  /* Autres styles souhaités */
+}
