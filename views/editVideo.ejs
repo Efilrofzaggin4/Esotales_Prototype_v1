@@ -1,0 +1,11 @@
+<h1>Editez un article</h1>
+
+<form action="/admin/videos/editVideo/<%=videos.id%>" method="post">
+	<input type="hidden" name="id" value="<%=videos.id%>" />
+	<label>Titre de la video</label>
+	<input type="text" name="titre" value="<%=videos.titre%>">
+	<label>Url de la video</label>
+	<input type="url" name="url">
+	
+	<button class='js-form-submit' type="submit">Enregistrer</button>
+</form>

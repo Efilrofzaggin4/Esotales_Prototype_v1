@@ -18,7 +18,7 @@ import {AddActuForm, AddActuSubmit} from "../controllers/addActu.js"
 import Classes from "../controllers/classes.js"
 
 import {Video, DeleteVideo, EditVideo, EditVideoSubmit} from "../controllers/videos.js"
-import AddVideo from "../controllers/addVideo.js";
+import {AddVideoForm, AddVideoSubmit} from "../controllers/addVideo.js";
 
 //liste des routes
 
@@ -71,9 +71,17 @@ router.get('/admin/classes', Classes)
 
 router.get('/admin/videos', Video)
 
-router.get('/admin/videos/addVideo', AddVideo)
-
 router.delete('/admin/videos/:id', DeleteVideo);
+
+router.get('/admin/videos/addVideo', AddVideoForm)
+
+router.post('/admin/videos/addVideo', AddVideoSubmit);
+
+router.get('/admin/videos/editVideo/:id', EditVideo)
+
+router.post('/admin/videos/editVideo/:id', EditVideoSubmit)
+
+
 
 
 

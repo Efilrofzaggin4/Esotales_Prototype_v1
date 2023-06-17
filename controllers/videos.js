@@ -53,10 +53,11 @@ export const EditVideoSubmit = (req, res) => {
 	let id = req.params.id;
 	
 	const updateVideo = {
-		titre: req.body.titre
+		titre: req.body.titre,
+		url: req.body.url
 	}
 	console.log(req.body)
-	// requete de modification d'une Actualité
+	// requete de modification d'une Actualité  
 	let sql = 'UPDATE Videos SET ? WHERE id = ?';
 
 	pool.query(sql, [updateVideo, id], function (error, result, fields) {
