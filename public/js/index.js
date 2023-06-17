@@ -38,11 +38,11 @@ deleteVideoButton.forEach(button => {
   button.addEventListener('click', () => {
     const videoId = button.getAttribute('data-id');
     
-    deleteActu(videoId);
+    deleteVideo(videoId);
   });
 });
 
-function deleteActu(videoId) {
+function deleteVideo(videoId) {
   fetch(`/admin/videos/${videoId}`, {method: 'DELETE'})
     .then(response => {
       if (response.ok) {
@@ -51,6 +51,34 @@ function deleteActu(videoId) {
           deletedRow.remove(); // Supprimer la ligne du tableau correspondant à la video supprimée
         }} else {
           throw new Error('Erreur lors de la suppression de la video');
+        }
+    })
+    .catch(error => {
+      console.error(error);
+      //gestion d'erreur
+    });
+  }
+
+  const deleteImageButton = document.querySelectorAll(".js-remove-image-button");
+
+
+deleteImageButton.forEach(button => {
+  button.addEventListener('click', () => {
+    const imageId = button.getAttribute('data-id');
+    
+    deleteImage(imageId);
+  });
+});
+
+function deleteImage(imageId) {
+  fetch(`/admin/images/${imageId}`, {method: 'DELETE'})
+    .then(response => {
+      if (response.ok) {
+        const deletedRow = document.querySelector(`tr[data-id="${imageId}"]`);
+        if (deletedRow) {
+          deletedRow.remove(); // Supprimer la ligne du tableau correspondant à la video supprimée
+        }} else {
+          throw new Error("Erreur lors de la suppression de l'image");
         }
     })
     .catch(error => {
