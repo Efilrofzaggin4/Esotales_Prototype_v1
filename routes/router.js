@@ -20,6 +20,8 @@ import Classes from "../controllers/classes.js"
 import {Video, DeleteVideo, EditVideo, EditVideoSubmit} from "../controllers/videos.js"
 import {AddVideoForm, AddVideoSubmit} from "../controllers/addVideo.js";
 
+import {Image, DeleteImage, EditImage, EditImageSubmit} from "../controllers/images.js"
+
 //liste des routes
 
 //HOME PAGE
@@ -83,8 +85,13 @@ router.post('/admin/videos/editVideo/:id', EditVideoSubmit)
 
 
 
+router.get('/admin/images', Image)
 
+router.delete('/admin/images/:id', DeleteImage);
 
+router.get('/admin/images/editImage/:id', EditImage)
+
+router.post('/admin/images/editImage/:id', EditImageSubmit)
 
 
 

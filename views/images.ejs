@@ -1,0 +1,31 @@
+<h2>Gestion des images</h2>
+
+<table class="admin-table">
+	<thead>
+			<th>Titre</th>
+            <th>Image</th>
+            <th></th>
+            
+	</thead>
+	<tbody>
+		<% for(let i = 0; i < images.length; i++) { %>
+			<tr data-id="<%=images[i].id%>">
+				<td>
+					<a href="/images/<%=images[i].id%>"><%=images[i].titre%></a>
+				</td>
+                <td>
+                    <img class="mini-img" src="/<%=images[i].url%>" alt="<%=images[i].titre%>">
+                </td>
+				<td>
+                    <a class="edit" href="/admin/images/editImage/<%=images[i].id%>">edit</a>
+                    <button class="js-remove-image-button" data-id="<%=images[i].id%>">supp</button>
+                </td>
+				
+			</tr>
+		<% } %>
+	</tbody>
+</table>
+
+<a class="back" href="images/addImage">Ajouter une image</a>
+
+<script language="javascript" src="/js/index.js"></script>
