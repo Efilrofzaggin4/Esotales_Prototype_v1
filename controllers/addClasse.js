@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 //AddClasseForm =
 
-export default  (req, res) => {
+export const AddClasseForm =  (req, res) => {
     res.render('layoutAdmin', {template : 'addClasse'});
 };
 
@@ -56,7 +56,7 @@ export const AddClasseSubmit = (req, res) => {
         const newImagePath = "public/images/classes/"+files.image.newFilename+"."+imageExtension
         const newLogoPath = "public/images/logos/"+files.classe_logo.newFilename+"."+logoExtension
         const newCompPath = "public/images/compétences/"+files.competence_image.newFilename+"."+compExtension
-        console.log(newPath)
+        
 
         // // option 1
         // if(!authorizedExtention.includes(extension)){
@@ -82,18 +82,65 @@ export const AddClasseSubmit = (req, res) => {
         console.log(finalLogoPath)
         console.log(finalCompPath)
         
-        fs.copyFile(path, finalImagePath, finalLogoPath, finalCompPath, (err) => {
-            if(err) {
-                console.log(err)
-            }
-        })
-        
-        //pensez a changer utilisateurs-id à l'avenir
-        pool.query('INSERT INTO Images (id, titre, url, date) VALUES (?, ?, ?, CURRENT_TIME())', [uuidv4(), fields.titre, galeriePath], function (error, result, fields) {
-	        console.log(error)
-		        // une fois le post créé en BDD on redirige vers la page / (home)
-		        res.redirect('/admin/images');
-		});
-    });
-}
+        // fs.copyFile(path, finalImagePath, finalLogoPath, finalCompPath, (err) => {
+        //     if(err) {
+        //         console.log(err)
+        //     }
+        // })
 
+        fs.copyFile(imagePath, newImagePath, (err) => {
+            if (err) {
+                console.log(err);
+            }
+        });
+        
+        fs.copyFile(logoPath, newLogoPath, (err) => {
+            if (err) {
+                console.log(err);
+            }
+        });
+        
+        fs.copyFile(compPath, newCompPath, (err) => {
+            if (err) {
+                console.log(err);
+            }
+        });
+        
+        const imageId = uuidv4();
+        pool.query('INSERT INTO Images (id, titre, url, date) VALUES (?, ?, ?, CURRENT_TIMESTAMP)', [imageId, fields.nom, finalImagePath], (error, result) => {
+            if (error) {
+                console.log(error);
+                return res.status(500).send("Erreur lors de l'insertion de l'image du logo de classe.");
+            }
+        
+            const logoId = uuidv4();
+        pool.query('INSERT INTO Images (id, titre, url, date) VALUES (?, ?, ?, CURRENT_TIMESTAMP)', [logoId, fields.nom, finalLogoPath], (error, result) => {
+            if (error) {
+                console.log(error);
+                return res.status(500).send("Erreur lors de l'insertion de l'image du logo de classe.");
+            }
+
+            // Insertion dans la table "Images" pour l'image des compétences
+        const competenceImageId = uuidv4();
+        pool.query('INSERT INTO Images (id, titre, url, date) VALUES (?, ?, ?, CURRENT_TIMESTAMP)', [competenceImageId, fields.nom, finalCompPath], (error, result) => {
+                if (error) {
+                    console.log(error);
+                    return res.status(500).send("Erreur lors de l'insertion de l'image des compétences.");
+            }
+
+                // Insertion dans la table "Classes" pour le reste des champs
+        const classeId = uuidv4();
+                pool.query('INSERT INTO Classes (id, nom, description, équipement, image_id, classe_logo_id, competence_image_id) VALUES (?, ?, ?, ?, ?, ?, ?)', [classeId, fields.nom, fields.description, fields.équipement, imageId, logoId, competenceImageId], (error, result) => {
+            if (error) {
+                        console.log(error);
+                        return res.status(500).send("Erreur lors de l'insertion de la classe.");
+            }
+
+                    // Redirection vers gestion de classes
+                    res.redirect('/admin/classes');
+                });
+            });
+        });
+    });
+});
+};
