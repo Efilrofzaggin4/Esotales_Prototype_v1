@@ -1,0 +1,33 @@
+<h1>Ajoutez une Classes</h1>
+
+<form action="/admin/classes/addClasse" enctype="multipart/form-data" method="post">
+	<p>
+		<label for="image">Image</label>
+		<input type="file" name="image" required>
+    </p>
+
+	<p>
+		<label>Nom de la Classe</label>
+		<input type="text" name="nom">
+	</p>
+
+	<p>
+		<label for="classe_logo">Logo de classe</label>
+		<input type="file" name="classe_logo" required>
+	</p>
+
+	<p>
+		<label for="description">Description</label>
+		<textarea name="description"></textarea>
+	</p>
+	
+	<p>
+		<label for="competence_image">Image des compétences</label>
+		<input type="file" name="competence_image" required>
+	</p>
+	<p>
+		<label for="équipement">Équipement</label>
+		<textarea name="équipement"></textarea>
+	</p>
+	<input type="submit" name="Enregistrer">
+</form>

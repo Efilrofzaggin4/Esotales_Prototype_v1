@@ -4,7 +4,7 @@ import formidable from "formidable"
 import { v4 as uuidv4 } from 'uuid';
 
 export const AddImageForm = (req, res) => {
-    res.render('addImage');
+    res.render('layoutAdmin', {template : 'addImage'});
 };
 
 export const AddImageSubmit = (req, res) => {

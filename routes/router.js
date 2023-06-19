@@ -16,6 +16,7 @@ import {Actualites, DeleteActu, EditActu, EditActuSubmit} from "../controllers/a
 import {AddActuForm, AddActuSubmit} from "../controllers/addActu.js"
 
 import Classes from "../controllers/classes.js"
+import AddClasseForm from "../controllers/addClasse.js"
 
 import {Video, DeleteVideo, EditVideo, EditVideoSubmit} from "../controllers/videos.js"
 import {AddVideoForm, AddVideoSubmit} from "../controllers/addVideo.js";
@@ -68,6 +69,9 @@ router.post('/admin/actualites/editActu/:id', EditActuSubmit)
 //GESTION DES CLASSES
 
 router.get('/admin/classes', Classes)
+
+router.get('/admin/classes/addClasse', AddClasseForm)
+
 
 
 
