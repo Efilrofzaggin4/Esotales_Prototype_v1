@@ -1,3 +1,58 @@
 <h2>Gestion des classes</h2>
-
+<table class="admin-table">
+	<thead>
+	  <th>Titre</th>
+	  <th>Description</th>
+	  <th>Logo</th>
+	  <th>Image de compétence</th>
+	  <th></th>
+	</thead>
+	<tbody>
+	  <% for(let i = 0; i < classes.length; i++) { %>
+	  <tr data-id="<%= classes[i].id %>">
+		<td>
+		  <a href="/classes/<%= classes[i].id %>"><%= classes[i].nom %></a>
+		</td>
+		<td><%= classes[i].description.substring(0, 30) %> ...</td>
+		<td>
+		  <img class="mini-img" src="/<%= classes[i].classe_logo_url %>" alt="Logo">
+		</td>
+		<td>
+		  <img class="mini-img" src="/<%= classes[i].competence_image_url %>" alt="Image de compétence">
+		</td>
+		<td>
+			<img class="mini-img" src="/<%= classes[i].image_url %>" alt="Image de classe">
+		</td>
+		<td>
+			<a class="edit" href="/admin/classes/editClasses/<%=classes[i].id%>">edit</a>
+		   <button class="js-remove-classes-button" data-id="<%=classes[i].id%>">supp</button>
+	   </td> 
+	  </tr>
+	  <% } %>
+	</tbody>
+  </table>
+<!-- <table class="admin-table">
+	<thead>
+			<th>Titre</th>
+            <th>Description</th>
+            <th></th>
+            <th></th>
+			<th></th>
+	</thead>
+	<tbody>
+		<% for(let i = 0; i < classes.length; i++) { %>
+			<tr data-id="<%=classes[i].id%>">
+				<td>
+					<a href="/classes/<%=classes[i].id%>"><%=classes[i].nom%></a>
+				</td>
+				<td><%=classes[i].description.substring(0, 30)%> ...</td>
+				
+			</tr>
+		<% } %>
+	</tbody>
+</table>
+-->
 <a href="/admin/classes/addClasse">ajouter une classe</a>
+
+<script language="javascript" src="/js/index.js"></script> 
+

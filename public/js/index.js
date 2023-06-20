@@ -86,3 +86,31 @@ function deleteImage(imageId) {
       //gestion d'erreur
     });
   }
+
+const deleteClassesButton = document.querySelectorAll(".js-remove-classes-button");
+
+
+deleteClassesButton.forEach(button => {
+  button.addEventListener('click', () => {
+    const classesId = button.getAttribute('data-id');
+    
+    deleteClasses(classesId);
+  });
+});
+
+function deleteClasses(classesId) {
+  fetch(`/admin/classes/${classesId}`, {method: 'DELETE'})
+    .then(response => {
+      if (response.ok) {
+        const deletedRow = document.querySelector(`tr[data-id="${classesId}"]`);
+        if (deletedRow) {
+          deletedRow.remove(); // Supprimer la ligne du tableau correspondant à la video supprimée
+        }} else {
+          throw new Error("Erreur lors de la suppression de la classes");
+        }
+    })
+    .catch(error => {
+      console.error(error);
+      //gestion d'erreur
+    });
+  }

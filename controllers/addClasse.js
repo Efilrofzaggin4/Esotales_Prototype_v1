@@ -106,31 +106,31 @@ export const AddClasseSubmit = (req, res) => {
             }
         });
         
-        const imageId = uuidv4();
-        pool.query('INSERT INTO Images (id, titre, url, date) VALUES (?, ?, ?, CURRENT_TIMESTAMP)', [imageId, fields.nom, finalImagePath], (error, result) => {
-            if (error) {
-                console.log(error);
-                return res.status(500).send("Erreur lors de l'insertion de l'image du logo de classe.");
-            }
+        // const imageId = uuidv4();
+        // pool.query('INSERT INTO Images (id, titre, url, date) VALUES (?, ?, ?, CURRENT_TIMESTAMP)', [imageId, fields.nom, finalImagePath], (error, result) => {
+        //     if (error) {
+        //         console.log(error);
+        //         return res.status(500).send("Erreur lors de l'insertion de l'image du logo de classe.");
+        //     }
         
-            const logoId = uuidv4();
-        pool.query('INSERT INTO Images (id, titre, url, date) VALUES (?, ?, ?, CURRENT_TIMESTAMP)', [logoId, fields.nom, finalLogoPath], (error, result) => {
-            if (error) {
-                console.log(error);
-                return res.status(500).send("Erreur lors de l'insertion de l'image du logo de classe.");
-            }
+        // const logoId = uuidv4();
+        // pool.query('INSERT INTO Images (id, titre, url, date) VALUES (?, ?, ?, CURRENT_TIMESTAMP)', [logoId, fields.nom, finalLogoPath], (error, result) => {
+        //     if (error) {
+        //         console.log(error);
+        //         return res.status(500).send("Erreur lors de l'insertion de l'image du logo de classe.");
+        //     }
 
-            // Insertion dans la table "Images" pour l'image des compétences
-        const competenceImageId = uuidv4();
-        pool.query('INSERT INTO Images (id, titre, url, date) VALUES (?, ?, ?, CURRENT_TIMESTAMP)', [competenceImageId, fields.nom, finalCompPath], (error, result) => {
-                if (error) {
-                    console.log(error);
-                    return res.status(500).send("Erreur lors de l'insertion de l'image des compétences.");
-            }
+        //     // Insertion dans la table "Images" pour l'image des compétences
+        // const competenceImageId = uuidv4();
+        // pool.query('INSERT INTO Images (id, titre, url, date) VALUES (?, ?, ?, CURRENT_TIMESTAMP)', [competenceImageId, fields.nom, finalCompPath], (error, result) => {
+        //         if (error) {
+        //             console.log(error);
+        //             return res.status(500).send("Erreur lors de l'insertion de l'image des compétences.");
+        //     }
 
                 // Insertion dans la table "Classes" pour le reste des champs
         const classeId = uuidv4();
-                pool.query('INSERT INTO Classes (id, nom, description, équipement, image_id, classe_logo_id, competence_image_id) VALUES (?, ?, ?, ?, ?, ?, ?)', [classeId, fields.nom, fields.description, fields.équipement, imageId, logoId, competenceImageId], (error, result) => {
+                pool.query('INSERT INTO Classes (id, nom, description, équipement, image_url, classe_logo_url, competence_image_url) VALUES (?, ?, ?, ?, ?, ?, ?)', [classeId, fields.nom, fields.description, fields.équipement, finalImagePath, finalLogoPath, finalCompPath], (error, result) => {
             if (error) {
                         console.log(error);
                         return res.status(500).send("Erreur lors de l'insertion de la classe.");
@@ -140,7 +140,4 @@ export const AddClasseSubmit = (req, res) => {
                     res.redirect('/admin/classes');
                 });
             });
-        });
-    });
-});
-};
+        };

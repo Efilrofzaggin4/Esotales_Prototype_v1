@@ -1,7 +1,16 @@
 import express from "express";
+import session from 'express-session';
 import router from "./routes/router.js";
-import session from "express-session";
-
+import parseurl from "parseurl";
+/*
+----
+----
+-----
+Faire un changement pour que ce soit l'utilisateur connecté qui soit dans l'id
+-----
+-----
+----
+*/
 
 const app = express();
 const port = 8000;
@@ -31,14 +40,30 @@ app.use(express.urlencoded({ extended: true })) //bien penser à recréer la bas
 
 
 // app.use(express.static("public"));
-//appel du routeur
-app.use('/', router);
+
 
 app.use(function (req, res, next) {
     res.locals.isAdmin = req.session.role === 'admin';
 
     next();
 });
+
+
+const protectedRoutesRegex = /^\/admin(\/[a-zA-Z0-9]+)*$/;
+
+app.use(function (req, res, next) {
+    const route = parseurl(req).pathname;
+
+    if (protectedRoutesRegex.test(route) && req.session.role !== 'admin') {
+        res.redirect('/');
+    } else {
+        next();
+    }
+});
+
+
+//appel du routeur
+app.use('/', router);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, ()=>{

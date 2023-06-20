@@ -64,7 +64,7 @@ export const AddActuSubmit = (req, res) => {
         })
         
         //pensez a changer utilisateurs-id à l'avenir
-        pool.query('INSERT INTO Actualites (id, titre, contenu, utilisateur_id, image_url, date) VALUES (?, ?, ?, ?, ?,  CURRENT_TIME())', [uuidv4(), fields.titre, fields.contenu, "a1b3e628-1179-4075-8ad7-06c1bc471438", displayPath], function (error, result, fields) {
+        pool.query('INSERT INTO Actualites (id, titre, contenu, utilisateur_id, image_url, date) VALUES (?, ?, ?, ?, ?,  CURRENT_TIME())', [uuidv4(), fields.titre, fields.contenu, "fb782d1e-aa4f-427b-b64c-fbddbe7bd4f7", displayPath], function (error, result, fields) {
 	        console.log(error)
 		        // une fois le post créé en BDD on redirige vers la page / (home)
 		        res.redirect('/admin/actualites');
