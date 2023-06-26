@@ -7,7 +7,7 @@ import pool from "../config/database.js";
         console.error(error);
         res.status(500).send('Erreur de base de données');
     } else {
-        res.render('layoutAdmin', {template :  'classes',  classes: classes });
+        res.render('layout', {template :  'classes',  classes: classes });
     }
   });
 };

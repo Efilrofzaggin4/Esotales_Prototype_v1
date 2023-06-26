@@ -11,7 +11,7 @@ export const Image = (req, res) => {
       console.error(error);
       res.status(500).send('Erreur de base de données');
     } else {
-      res.render('layoutAdmin', {template :  'images',  images: images });
+      res.render('layout', {template :  'images',  images: images });
     }
   });
 };

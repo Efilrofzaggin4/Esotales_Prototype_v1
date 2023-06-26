@@ -1,49 +1,17 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
-</head>
-<body>
 
+<div class="main-home">
+  <h2 classe>Dernières News</h2>
+    <% for(let i = 0; i < actualites.length; i++) { %>
+      <article class="home-news">
+        <h3><%= actualites[i].titre %></h3>
+        <div class="news-content">
+          <p><%= actualites[i].contenu.substring(0, 70) %>...</p>
+          <img src="/<%=actualites[i].image_url%>" alt="">
+        </div>
 
-<header>
-    <h1>ESOTALES</h1>
-    <nav class="navbar">
-        <ul class="navbar-list">
-          <li class="nav-accueil"><a href="/">Accueil</a></li>
-          <li class="nav-actu"><a href="#">Actualité</a></li>
-          <li class="nav-classes"><a href="#">Classes</a></li>
-          <li class="nav-galerie"><a href="#">Galerie</a></li>
-        </ul>
-      </nav>
-</header>
-
-
-<main>
-
-
-<h2>Dernières actualités</h2>
-<ul>
-  <% for(let i = 0; i < actualites.length; i++) { %>
-    <li>
-      <h3><%= actualites[i].titre %></h3>
-      <p><%= actualites[i].contenu %></p>
-      <img src="/<%=actualites[i].image_url%>" alt="">
-    </li>
-  <% } %>
-</ul>
-
-</main>
-
-
-<footer>
-
-
-</footer>    
-</body>
-</html>
+      </article>
+    <% } %>
+</div>
 
 
 

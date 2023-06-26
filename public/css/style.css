@@ -1,18 +1,156 @@
-.admin-header{
-    background-image: url("/images/redEyedElfWoman.png");
-    background-position: center;
-    background-position-y: -300px;
-    background-repeat: no-repeat;
+
+/************************************
+Normalisation du Layout
+****************************/
+*{
+  box-sizing: border-box;
+}
+
+
+html {
+    font-size: 62.5%;
+    padding : 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+body {
+    font-size: 1.6rem;
+    margin: 0;
     width: 100%;
 }
 
-h1{
-  padding: 100px;
-  padding: 100px;
+header {
+  position: relative;
+}
+.header-image {
+  width: 100%;
+  background-image: url("/images/front/ELF.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 30rem; 
+}
+h1 {
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 3rem;
+  z-index: 1;
+  align-items: center;
+  margin: 0%;
+  padding: 1rem 0;
+  width: 100%;
+  background-color: rgba(78, 65, 45, 58%);
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
 }
 
-.mini-img {
-  width: 100px;
-  height: 70px;
-  /* Autres styles souhaités */
+.navbar-list {
+  list-style-type: none; 
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+  width: 100%; 
+  padding: 0;
+  margin: 0%;
+  background-color: rgba(78, 65, 45, 100%);
+}
+
+.navbar-list li {
+  margin-right: 1.5rem; 
+  padding: 1rem;
+  width: 100%;
+  border: 0.1rem solid #000; 
+  box-sizing: border-box;
+}
+li.nav-link{
+  margin: 0%;
+  padding: 0%;
+}
+.navbar-list a {
+  color:rgba(255, 255, 255, 100%); 
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  font-size: larger;
+}
+
+/*********************
+Main du Home
+********************/
+
+.main-home {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  background-image: url("/images/front/universe_witchcraft.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.main-home h2 {
+  margin: 0; 
+  text-align: center; 
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+.main-home {
+  margin: 0;
+  padding: 0;
+  list-style: none; 
+  
+}
+.home-news {
+  padding:  2% 5%;
+  max-width: 90%;
+  
+  margin: auto;
+}
+.home-news{
+  background-color:rgba(255, 255, 255, 50%);
+  border-radius: 2.5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.home-news h3 {
+  text-align: center; 
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.home-news .news-content {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  background-color:rgba(255, 255, 255, 100%);
+  border-radius: 3rem;
+  
+}
+
+.home-news img {
+  width: 50%;
+  height: auto;
+  border-radius: 3rem;
+  
+}
+
+.home-news p {
+  width: 50%;
+  font-size: 20px;
+  margin:  1rem 1rem;
 }

@@ -11,7 +11,7 @@ export const Video = (req, res) => {
       console.error(error);
       res.status(500).send('Erreur de base de données');
     } else {
-      res.render('layoutAdmin', {template :  'videos',  videos: videos });
+      res.render('layout', {template :  'videos',  videos: videos });
     }
   });
 };

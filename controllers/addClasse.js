@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 //AddClasseForm =
 
 export const AddClasseForm =  (req, res) => {
-    res.render('layoutAdmin', {template : 'addClasse'});
+    res.render('layout', {template : 'addClasse'});
 };
 
 export const AddClasseSubmit = (req, res) => {
@@ -82,11 +82,6 @@ export const AddClasseSubmit = (req, res) => {
         console.log(finalLogoPath)
         console.log(finalCompPath)
         
-        // fs.copyFile(path, finalImagePath, finalLogoPath, finalCompPath, (err) => {
-        //     if(err) {
-        //         console.log(err)
-        //     }
-        // })
 
         fs.copyFile(imagePath, newImagePath, (err) => {
             if (err) {
@@ -106,27 +101,7 @@ export const AddClasseSubmit = (req, res) => {
             }
         });
         
-        // const imageId = uuidv4();
-        // pool.query('INSERT INTO Images (id, titre, url, date) VALUES (?, ?, ?, CURRENT_TIMESTAMP)', [imageId, fields.nom, finalImagePath], (error, result) => {
-        //     if (error) {
-        //         console.log(error);
-        //         return res.status(500).send("Erreur lors de l'insertion de l'image du logo de classe.");
-        //     }
         
-        // const logoId = uuidv4();
-        // pool.query('INSERT INTO Images (id, titre, url, date) VALUES (?, ?, ?, CURRENT_TIMESTAMP)', [logoId, fields.nom, finalLogoPath], (error, result) => {
-        //     if (error) {
-        //         console.log(error);
-        //         return res.status(500).send("Erreur lors de l'insertion de l'image du logo de classe.");
-        //     }
-
-        //     // Insertion dans la table "Images" pour l'image des compétences
-        // const competenceImageId = uuidv4();
-        // pool.query('INSERT INTO Images (id, titre, url, date) VALUES (?, ?, ?, CURRENT_TIMESTAMP)', [competenceImageId, fields.nom, finalCompPath], (error, result) => {
-        //         if (error) {
-        //             console.log(error);
-        //             return res.status(500).send("Erreur lors de l'insertion de l'image des compétences.");
-        //     }
 
                 // Insertion dans la table "Classes" pour le reste des champs
         const classeId = uuidv4();

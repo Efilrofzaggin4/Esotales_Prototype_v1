@@ -2,13 +2,13 @@ import pool from "../config/database.js";
 
 export default (req, res) => {
     
-    const sql = 'SELECT * FROM Actualites ORDER BY date DESC LIMIT 5';
-    pool.query(sql, function (error, actualites) {
+    const sql = 'SELECT * FROM Classes ORDER BY nom';
+    pool.query(sql, function (error, classes) {
       if (error) {
         console.error(error);
         res.status(500).send('Erreur de base de données');
       } else {
-        res.render( 'layout', {template : 'home', actualites: actualites });
+        res.render('home', { classes: classes });
       }
-    });
-  };
+    })
+};
