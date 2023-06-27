@@ -19,9 +19,9 @@
             <nav class="navbar">
                 <ul class="navbar-list">
                   <li class="nav-link"><a href="/">Accueil</a></li>
-                  <li class="nav-link"><a href="#">Actualité</a></li>
-                  <li class="nav-link"><a href="#">Classes</a></li>
-                  <li class="nav-link"><a href="#">Galerie</a></li>
+                  <li class="nav-link"><a href="/actusIndex">Actualité</a></li>
+                  <li class="nav-link"><a href="/classesIndex">Classes</a></li>
+                  <li class="nav-link"><a href="/galerie">Galerie</a></li>
                 </ul>
               </nav>
             </div>
@@ -31,10 +31,22 @@
      
         <%- include(template) -%> 
     </main>
-    <footer>
-        <p class="reseaux-sociaux">Réseaux sociaux</p>
+    <footer class="footer">
+        <div class="reseaux-sociaux">
+            <p >Réseaux sociaux</p>
+
+            <i class="fa-brands fa-discord" style="color: #404eed;"></i>
+            <i class="fa-brands fa-youtube" style="color: #fa2500;"></i>
+            <i class="fa-brands fa-twitch" style="color: #8a00bd;"></i>
+            <i class="fa-brands fa-instagram" style="color: #732d21;"></i>
+            <i class="fa-brands fa-spotify" style="color: #01df61;"></i>
+            
+        </div>
         
-        <p class="mentions-legales">Mentions legales</p>
+        <div class="mentions-legales">
+            <p >Mentions legales</p>
+            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio laborum cupiditate eos blanditiis laboriosam aliquam eveniet sint aperiam numquam error, provident ad facere eum recusandae architecto, ea necessitatibus officiis esse</p>
+        </div>
     </footer>
 </body>
 </html>

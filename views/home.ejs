@@ -1,12 +1,12 @@
 
 <div class="main-home">
-  <h2 classe>Dernières News</h2>
+  <h2>Dernières News</h2>
     <% for(let i = 0; i < actualites.length; i++) { %>
       <article class="home-news">
         <h3><%= actualites[i].titre %></h3>
         <div class="news-content">
           <p><%= actualites[i].contenu.substring(0, 70) %>...</p>
-          <img src="/<%=actualites[i].image_url%>" alt="">
+          <img src="/<%=actualites[i].image_url%>" alt="<%= actualites[i].titre %>">
         </div>
 
       </article>

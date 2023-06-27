@@ -1,0 +1,14 @@
+<article data-id="<%=actus.id%>">
+
+    <h2><%=actus.titre%></h2>
+
+    <p>
+        <%=actus.contenu%>
+    </p>
+    
+    <p>
+        <img class="mini-img" src="/<%=actus.image_url%>" alt="<%=actus.titre%>">
+    </p>
+    
+    <div><%=actus.date.toLocaleDateString()%></div>
+</article>

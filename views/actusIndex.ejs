@@ -1,0 +1,21 @@
+<section class="index-actus">
+    <h2>Les Actualités</h2>
+
+
+    <% for(let i = 0; i < actus.length; i++) { %>
+        <article data-id="<%=actus[i].id%>">
+
+            <a href="/actusIndex/<%=actus[i].id%>"><%=actus[i].titre%></a>
+
+            <p>
+                <%=actus[i].contenu.substring(0, 50)%>
+            </p>
+            
+            <p>
+                <img class="mini-img" src="/<%=actus[i].image_url%>" alt="<%=actus[i].titre%>">
+            </p>
+            
+            <div><%=actus[i].date.toLocaleDateString()%></div>
+        </article>
+    <% } %>
+</section>

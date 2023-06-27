@@ -27,9 +27,10 @@ import {AddImageForm, AddImageSubmit} from "../controllers/addImage.js"
 
 //ROUTER VISITEUR
 import {ClassesIndex, ShowSelectedClass} from "../controllers/classesIndex.js"
+
 import Galerie from "../controllers/galerie.js"
 
-
+import {ActusIndex, ShowSelectedActu} from "../controllers/actusIndex.js"
 
 //liste des routes
 
@@ -119,10 +120,12 @@ router.post('/admin/images/addImage', AddImageSubmit);
 
 router.get('/classesIndex', ClassesIndex);
 router.get('/classesIndex/:id', ShowSelectedClass);
-// Faire le ShowSelectedClass
+
 
 router.get('/galerie', Galerie)
 
+router.get('/actusIndex', ActusIndex)
+router.get('/actusIndex/:id', ShowSelectedActu)
 
 
 
