@@ -5,8 +5,9 @@ const router = express.Router();
 
 
 
-//appel des routers
+///////////////////appel des routers///////////////////////
 
+//ROUTER ADMIN
 import HomeController from "../controllers/home.js";  //page d'accueil
 import {Register, RegisterSubmit} from '../controllers/register.js'; //, RegisterSubmit
 import { Login, LoginSubmit, Logout } from '../controllers/login.js';
@@ -23,6 +24,11 @@ import {AddVideoForm, AddVideoSubmit} from "../controllers/addVideo.js";
 
 import {Image, DeleteImage, EditImage, EditImageSubmit} from "../controllers/images.js"
 import {AddImageForm, AddImageSubmit} from "../controllers/addImage.js"
+
+//ROUTER VISITEUR
+import {ClassesIndex, ShowSelectedClass} from "../controllers/classesIndex.js"
+import Galerie from "../controllers/galerie.js"
+
 
 
 //liste des routes
@@ -99,16 +105,23 @@ router.get('/admin/images', Image)
 
 router.delete('/admin/images/:id', DeleteImage);
 
-router.get('/admin/images/editImage/:id', EditImage)
+router.get('/admin/images/editImage/:id', EditImage);
 
-router.post('/admin/images/editImage/:id', EditImageSubmit)
+router.post('/admin/images/editImage/:id', EditImageSubmit);
 
-router.get('/admin/images/addImage', AddImageForm)
+router.get('/admin/images/addImage', AddImageForm);
 
 router.post('/admin/images/addImage', AddImageSubmit);
 
 
 
+//SITE COTE VISITEUR
+
+router.get('/classesIndex', ClassesIndex);
+router.get('/classesIndex/:id', ShowSelectedClass);
+// Faire le ShowSelectedClass
+
+router.get('/galerie', Galerie)
 
 
 
