@@ -102,6 +102,7 @@ export const AddClasseSubmit = (req, res) => {
         });
         
         
+        
 
                 // Insertion dans la table "Classes" pour le reste des champs
         const classeId = uuidv4();

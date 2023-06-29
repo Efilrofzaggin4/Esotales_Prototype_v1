@@ -47,35 +47,29 @@ export const EditClasses = (req, res) => {
 	        res.render('editClasses', { classes: rows[0] });
 	 });
 }
-/*
-////////////////////////////////
-/////////////////////////////
 
-TODO : EDITCLASSESSUBMIT
-
-//////////////////////////////
-///////////////////////////
-*/
-// export const EditClassesSubmit = (req, res) => {
+export const EditClasseSubmit = (req, res) => {
     
-// 	let id = req.params.id;
+	let id = req.params.id;
 	
-// 	const updateClasses = {
-// 		titre: req.body.titre,
-// 		contenu: req.body.contenu
-// 	}
-// 	console.log(req.body)
-// 	// requete de modification d'une Classes
-// 	let sql = 'UPDATE Classes SET ? WHERE id = ?';
+	const updateClasses = {
+		nom: req.body.nom,
+		description: req.body.description,
+		équipement: req.body.équipement
+	}
+	console.log(req.body)
+	// requete de modification d'une Classes
+	let sql = 'UPDATE Classes SET ? WHERE id = ?';
 
-// 	pool.query(sql, [updateClasses, id], function (error, result, fields) {
-// 	    if (error) {
-// 	        console.log(error)
-// 	        res.status(500).send({
-// 	            error: 'Error when update classes'
-// 	        });
-// 	    } else {
-// 	        res.redirect('/admin/classes')
-// 	    }
-// 	 });
-// }
+	pool.query(sql, [updateClasses, id], function (error, result, fields) {
+	    if (error) {
+	        console.log(error)
+	        res.status(500).send({
+	            error: 'Error when update classes'
+	        });
+	    } else {
+	        res.redirect('/admin/classes')
+	    }
+	 });
+}
+

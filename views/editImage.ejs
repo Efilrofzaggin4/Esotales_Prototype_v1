@@ -1,0 +1,8 @@
+<form action="/admin/images/editImage/<%= images.id %>" enctype="multipart/form-data" method="post">
+	<label>Titre de l'image</label>
+	<input type="text" name="titre" value="<%= images.titre %>">
+	<label>Aperçu de l'image</label>
+	<input type="file" name="myfile">
+	
+	<input type="submit" name="Enregistrer">
+</form>
