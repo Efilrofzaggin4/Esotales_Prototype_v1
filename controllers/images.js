@@ -119,15 +119,6 @@ export const EditImageSubmit = (req, res) => {
 				        res.redirect('/admin/images')
 				    }
 		});
-        
-        //pensez a changer utilisateurs-id à l'avenir
-        // pool.query('INSERT INTO Images (id, titre, url, date) VALUES (?, ?, ?, CURRENT_TIME())', [uuidv4(), fields.titre, galeriePath], function (error, result, fields) {
-	    //     console.log(error)
-		//         // une fois le post créé en BDD on redirige vers la page / (home)
-		//         res.redirect('/admin/images');
-		// });
-
-
     });
 }
 

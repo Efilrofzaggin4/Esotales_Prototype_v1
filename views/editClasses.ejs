@@ -1,17 +1,31 @@
 <h2>Editez une Classe</h2>
 
-<form action="/admin/classes/editClasses/<%= classes.id %>" method="post">
+<form action="/admin/classes/editClasses/<%= classes.id %>" enctype="multipart/form-data" method="post">
   <input type="hidden" name="id" value="<%= classes.id %>" />
+  <p>
+		<label for="image">Image</label>
+		<input type="file" name="image" value="<%= classes.image %>">
+    </p>
 
   <p>
     <label for="name">Nom de la Classe</label>
     <input type="text" name="nom" value="<%= classes.nom %>">
   </p>
 
+  <p>	
+		<label for="classe_logo">Logo de classe</label>
+		<input type="file" name="classe_logo" value="<%= classes.classe_logo %>">
+	</p>
+
   <p>
     <label for="description">Description</label>
     <textarea name="description"><%= classes.description %></textarea>
   </p>
+
+  <p>
+		<label for="competence_image">Image des compétences</label>
+		<input type="file" name="competence_image" value="<%= classes.competence_image %>">
+	</p>
 
   <p>
     <label for="équipement">Équipement</label>

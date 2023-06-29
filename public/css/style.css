@@ -177,3 +177,23 @@ Main de l'index actualité
   color: #ffffff;
 }
 
+/*************
+FOOTER
+**************/
+.reseaux-sociaux p {
+  text-align: center;
+}
+
+.logo-reseaux{
+  display: flex;
+  justify-content: space-around; 
+}
+
+
+.fa-brands{
+  font-size: 3rem;
+}
+
+.mentions-legales{
+  text-align: center;
+}
