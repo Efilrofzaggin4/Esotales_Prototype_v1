@@ -4,7 +4,7 @@
   <h3>Images</h3>
   <% for(let i = 0; i < medias.images.length; i++) { %>
     <div data-id="<%=medias.images[i].id%>">
-      <img src="<%= medias.images[i].url %>" alt="<%= medias.images[i].nom %>">
+      <img src="<%= medias.images[i].url %>" alt="<%= medias.images[i].titre %>">
       <p><%= medias.images[i].titre %></p>
     </div>
   <% } %>
@@ -15,7 +15,7 @@
   <% for(let i = 0; i < medias.videos.length; i++) { %>
     <div data-id="<%=medias.videos[i].id%>">
         <h3><%= medias.videos[i].titre %></h3>
-        <iframe width="300" height="150" src="<%= medias.videos[i].url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="300" height="150" src="<%= medias.videos[i].url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
     </div>
   <% } %>
 </section>

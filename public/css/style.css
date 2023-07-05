@@ -180,7 +180,13 @@ Main de l'index actualité
 /*************
 FOOTER
 **************/
-.reseaux-sociaux p {
+.footer{
+  background-color: rgba(78, 65, 45, 100%);
+  color: #ffffff;
+}
+
+.reseaux-sociaux h3 {
+  margin-top: 0%;
   text-align: center;
 }
 
@@ -196,4 +202,8 @@ FOOTER
 
 .mentions-legales{
   text-align: center;
+  margin-top: 3rem;
+}
+.mentions-legales p{
+  margin-bottom: 0;
 }
