@@ -1,10 +1,22 @@
-<h1>Ajoutez une Vidéo</h1>
+<h2>Ajoutez une Vidéo</h2>
 
-<form action="/admin/videos/addVideo" method="post">
-	<label>Titre de la vidéo</label>
-	<input type="text" name="titre">
-	<label>url de la vidéo</label>
-	<input type="url" name="url">	
+<form class="admin_form" action="/admin/videos/addVideo" method="post">
+	<p>
+		<label>Titre de la vidéo</label>
+	</p>
+	<p>
+		<input type="text" name="titre" required>
+	</p>
+	<p>
+		<label>url de la vidéo</label>
+	</p>
+	<p>
+		<input type="url" name="url" required>
+	</p>
+	
+	
+	
+		
 	
 	<input type="submit" name="Enregistrer">
 </form>

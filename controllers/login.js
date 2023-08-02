@@ -2,7 +2,7 @@ import pool from '../config/database.js';
 import bcrypt from 'bcrypt';
 
 export const Login = function (req, res) {
-    res.render('login');
+    res.render('layout', {template:'login'});
 }
 
 export const LoginSubmit = function (req, res) {

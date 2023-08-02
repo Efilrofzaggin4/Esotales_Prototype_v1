@@ -4,7 +4,7 @@ import formidable from "formidable"
 import { v4 as uuidv4 } from 'uuid';
 
 export const AddActuForm = (req, res) => {
-    res.render('addActu');
+    res.render('layout', {template :'addActu'});
 };
 
 export const AddActuSubmit = (req, res) => {

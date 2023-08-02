@@ -45,7 +45,7 @@ export const EditImage = (req, res) => {
 	pool.query(sql, [id], function (error, rows, fields) {
 		const images = rows; // Assigner les résultats à la variable `images`
 	        // appel du template pour édition de L'actualité
-	        res.render('editImage', { images: rows[0] });
+	        res.render('layout', {template : 'editImage',  images: rows[0] });
 	 });
 }
 

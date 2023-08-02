@@ -1,11 +1,26 @@
-<h1>Editez un article</h1>
+<h2>Editez un article</h2>
 
-<form action="/admin/actualites/editActu/<%=actus.id%>" method="post">
+<form class="admin_form" action="/admin/actualites/editActu/<%=actus.id%>" method="post">
 	<input type="hidden" name="id" value="<%=actus.id%>" />
-	<label>Titre de l'actu</label>
-	<input type="text" name="titre" value="<%=actus.titre%>">
-	<label>contenu de l'article</label>
-	<textarea name="contenu"><%=actus.contenu%></textarea>
+	<p>
+		<label>Titre de l'actu</label>
+	</p>
+	<p>
+		<input type="text" name="titre" value="<%=actus.titre%>" required>
+	</p>
+	<p>
+		<label>contenu de l'article</label>	
+	</p>
+	<p>
+		<textarea name="contenu" rows="7" cols="40" required><%=actus.contenu%></textarea>
+	</p>
 	
-	<button class='js-form-submit' type="submit">Enregistrer</button>
+	<p>
+		<button class='js-form-submit' type="submit">Enregistrer</button>
+	</p>
+	
+	
+	
+	
+	
 </form>

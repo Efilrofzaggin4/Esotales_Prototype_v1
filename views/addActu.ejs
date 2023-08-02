@@ -1,12 +1,28 @@
-<h1>Ajoutez une Actualité</h1>
+<h2>Ajoutez une Actualité</h2>
 
-<form action="/admin/actualites/addActu" enctype="multipart/form-data" method="post">
-	<label>Titre de l'actualité</label>
-	<input type="text" name="titre">
-	<label>Contenu de l'actualité</label>
-	<input type="file" name='myfile'>
-	<textarea name="contenu"></textarea>
+<form class="admin_form" action="/admin/actualites/addActu" enctype="multipart/form-data" method="post">
 	
+	<p>
+		<label>Titre de l'actualité</label>
+	</p>
+	<p>
+		<input type="text" name="titre" required>
+	</p>
+
+	<p>
+		<label>Image de l'actualité</label>
+	</p>
+	<p>
+		<input type="file" name='myfile' required>
+	</p>
 	
-	<input type="submit" name="Enregistrer">
+	<p>
+		<label>Contenu textuel de l'actualité</label>
+	</p>
+	<p>
+		<textarea name="contenu" rows="7" cols="40" required></textarea>
+	</p>
+	
+	<p><input type="submit" name="Enregistrer"></p>
+	
 </form>

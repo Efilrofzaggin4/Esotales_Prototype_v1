@@ -1,21 +1,25 @@
-<h2>Galerie</h2>
+<h2>Galerie multimédia</h2>
 
 <section class="images">
   <h3>Images</h3>
-  <% for(let i = 0; i < medias.images.length; i++) { %>
-    <div data-id="<%=medias.images[i].id%>">
-      <img src="<%= medias.images[i].url %>" alt="<%= medias.images[i].titre %>">
-      <p><%= medias.images[i].titre %></p>
+    <div class="carousel-images">
+      <% for(let i = 0; i < medias.images.length; i++) { %>
+        <div data-id="<%=medias.images[i].id%>" class="carousel-image-item">
+          <p><%= medias.images[i].titre %></p>
+          <img src="<%= medias.images[i].url %>" alt="<%= medias.images[i].titre %>">
+        </div>
+      <% } %>
     </div>
-  <% } %>
 </section>
 
 <section class="videos">
   <h3>Vidéos</h3>
-  <% for(let i = 0; i < medias.videos.length; i++) { %>
-    <div data-id="<%=medias.videos[i].id%>">
-        <h3><%= medias.videos[i].titre %></h3>
-        <iframe width="300" height="150" src="<%= medias.videos[i].url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
-    </div>
-  <% } %>
+    <div class="carousel_videos">
+      <% for(let i = 0; i < medias.videos.length; i++) { %>
+        <div data-id="<%=medias.videos[i].id%>">
+            <p><%= medias.videos[i].titre %></p>
+            <iframe width="300" height="150" src="<%= medias.videos[i].url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"  allowfullscreen ></iframe>
+        </div>
+      <% } %>
+  </div>
 </section>

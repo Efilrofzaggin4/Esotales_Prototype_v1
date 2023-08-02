@@ -1,12 +1,21 @@
 <h2>Ajoutez une Image</h2>
 
-<form action="/admin/images/addImage" enctype="multipart/form-data" method="post">
-	<label>Titre de l'image</label>
-	<input type="text" name="titre">
-	<label>Aperçu de l'image</label>
-	<input type="file" name='myfile'>
+<form class="admin_form" action="/admin/images/addImage" enctype="multipart/form-data" method="post">
+	<p>
+		<label>Titre de l'image</label>
+	</p>
+	<p>
+		<input type="text" name="titre" required>
+	</p>
+	<p>
+		<label>Aperçu de l'image</label>
+	</p>
+	<p>
+		<input type="file" name='myfile'required>
+	</p>
 	
+	<p>
+		<input type="submit" name="Enregistrer">
+	</p>
 	
-	
-	<input type="submit" name="Enregistrer">
 </form>

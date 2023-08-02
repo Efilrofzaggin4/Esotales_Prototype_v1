@@ -24,6 +24,14 @@ body {
 header {
   position: relative;
 }
+.log_admin{
+  background-color: rgba(78, 65, 45, 100%);
+
+}
+.log_admin a {
+  color:rgba(255, 255, 255, 100%); 
+  text-decoration: none;
+}
 .header-image {
   width: 100%;
   background-image: url("/images/front/ELF.jpg");
@@ -83,6 +91,7 @@ li.nav-link{
   width: 100%;
   font-size: larger;
 }
+
 
 /*********************
 Main du Home
@@ -162,7 +171,7 @@ Main de l'index actualité
   display: flex;
   flex-direction: column; 
   align-items: center; 
-  background-image: url("/images/front/paysage-fantasy-multi-tower_2.jpg");
+  /* background-image: url("/images/front/paysage-fantasy-multi-tower_2.jpg"); */
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -176,6 +185,53 @@ Main de l'index actualité
   margin-bottom: 1rem;
   color: #ffffff;
 }
+
+/************************ Coté Admin *******************/
+
+
+/*************
+Accueil admin
+**************/
+.accueil-admin p{
+  margin: 3rem 0;
+  padding: 3rem 5rem;
+  background-color:rgba(255, 255, 255, 50%);
+  border-radius: 2.5rem;
+}
+
+/*************
+gestion d'actualité
+**************/
+.admin-table {
+  width: auto;
+  border-collapse: collapse;
+  border: 1px solid
+}
+
+.admin-table th{
+  background-color:rgba(255, 255, 255, 100%);
+  border: 1px solid
+}
+.admin-table td{
+  background-color:rgba(255, 255, 255, 50%);
+  border: 1px solid
+}
+
+.mini-img {
+  width: 75%;
+  align-items: center;
+}
+.admin_form {
+  background-color:rgba(255, 255, 255, 50%);
+  border: 1px solid;
+}
+.admin_form p {
+  display: flex;
+  justify-content: center;
+}
+
+
+
 
 /*************
 FOOTER
@@ -207,3 +263,9 @@ FOOTER
 .mentions-legales p{
   margin-bottom: 0;
 }
+
+/******** pour le desktop
+/* .accueil-admin p:hover{
+  padding: 5rem 7rem;
+  background-color:rgba(255, 255, 255, 75%);
+} */

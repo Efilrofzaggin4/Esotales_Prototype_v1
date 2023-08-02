@@ -1,6 +1,6 @@
 <h2>Ajoutez une Classes</h2>
 
-<form action="/admin/classes/addClasse" enctype="multipart/form-data" method="post">
+<form class="admin_form" action="/admin/classes/addClasse" enctype="multipart/form-data" method="post">
 	<p>
 		<label for="image">Image</label>
 		<input type="file" name="image" required>
@@ -8,7 +8,7 @@
 
 	<p>
 		<label for="name">Nom de la Classe</label>
-		<input type="text" name="nom">
+		<input type="text" name="nom" required>
 	</p>
 
 	<p>	
@@ -18,7 +18,7 @@
 
 	<p>
 		<label for="description">Description</label>
-		<textarea name="description"></textarea>
+		<textarea name="description" rows="7" cols="40" required></textarea>
 	</p>
 	
 	<p>
@@ -27,7 +27,8 @@
 	</p>
 	<p>
 		<label for="équipement">Équipement</label>
-		<textarea name="équipement"></textarea>
+		<textarea name="équipement" rows="7" cols="40" required></textarea>
 	</p>
-	<input type="submit" name="Enregistrer">
+	
+	<p><input type="submit" name="Enregistrer"></p>
 </form>

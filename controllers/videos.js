@@ -45,7 +45,7 @@ export const EditVideo = (req, res) => {
 	pool.query(sql, [id], function (error, rows, fields) {
 		const videos = rows; // Assigner les résultats à la variable `actus`
 	        // appel du template pour édition de L'actualité
-	        res.render('editVideo', { videos: rows[0] });
+	        res.render('layout', {template :'editVideo', videos: rows[0] });
 	 });
 }
 export const EditVideoSubmit = (req, res) => {

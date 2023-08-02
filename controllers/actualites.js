@@ -11,7 +11,7 @@ export const Actualites = (req, res) => {
       console.error(error);
       res.status(500).send('Erreur de base de données');
     } else {
-      res.render('layout', {template :  'actualites',  actus: actus });
+      res.render('layout',{template :  'actualites',  actus: actus });
     }
   });
 };
@@ -35,6 +35,7 @@ export const DeleteActu = (req, res) => {
 	    }
 	});
 }
+
 export const EditActu = (req, res) => {
     
 	let id = req.params.id;
@@ -45,7 +46,7 @@ export const EditActu = (req, res) => {
 	pool.query(sql, [id], function (error, rows, fields) {
 		const actus = rows; // Assigner les résultats à la variable `actus`
 	        // appel du template pour édition de L'actualité
-	        res.render('editActu', { actus: rows[0] });
+	        res.render('layout', {template:'editActu',  actus: rows[0] });
 	 });
 }
 export const EditActuSubmit = (req, res) => {
