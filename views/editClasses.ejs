@@ -1,35 +1,35 @@
 <h2>Editez une Classe</h2>
 
-<form action="/admin/classes/editClasses/<%= classes.id %>" enctype="multipart/form-data" method="post">
+<form class="admin_form" action="/admin/classes/editClasses/<%= classes.id %>" enctype="multipart/form-data" method="post">
   <input type="hidden" name="id" value="<%= classes.id %>" />
   <p>
 		<label for="image">Image</label>
-		<input type="file" name="image" value="<%= classes.image %>">
+		<input type="file" name="image" value="<%= classes.image %>" required>
     </p>
 
   <p>
     <label for="name">Nom de la Classe</label>
-    <input type="text" name="nom" value="<%= classes.nom %>">
+    <input type="text" name="nom" value="<%= classes.nom %>" required>
   </p>
 
   <p>	
 		<label for="classe_logo">Logo de classe</label>
-		<input type="file" name="classe_logo" value="<%= classes.classe_logo %>">
+		<input type="file" name="classe_logo" value="<%= classes.classe_logo %>" required>
 	</p>
 
   <p>
     <label for="description">Description</label>
-    <textarea name="description"><%= classes.description %></textarea>
+    <textarea name="description" required><%= classes.description %></textarea>
   </p>
 
   <p>
 		<label for="competence_image">Image des compétences</label>
-		<input type="file" name="competence_image" value="<%= classes.competence_image %>">
+		<input type="file" name="competence_image" value="<%= classes.competence_image %>" required>
 	</p>
 
   <p>
     <label for="équipement">Équipement</label>
-    <textarea name="équipement"><%= classes.équipement %></textarea>
+    <textarea name="équipement" required><%= classes.équipement %></textarea>
   </p>
 
   <input type="submit" name="Enregistrer">

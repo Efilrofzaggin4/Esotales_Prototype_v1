@@ -1,20 +1,24 @@
 <h2>Gestion des vidéos</h2>
 
+<p>
+	<a class="back" href="videos/addVideo">Ajouter une video</a>
+</p>
+
 <table class="admin-table">
 	<thead>
 			<th>Titre</th>
             <th>Video</th>
-            <th></th>
+            <th>edit/supp</th>
             
 	</thead>
 	<tbody>
 		<% for(let i = 0; i < videos.length; i++) { %>
 			<tr data-id="<%=videos[i].id%>">
 				<td>
-					<a href="/videos/<%=videos[i].id%>"><%=videos[i].titre%></a>
+					<%=videos[i].titre%>
 				</td>
                 <td>
-                    <iframe width="300" height="150" src="<%=videos[i].url%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>			
+                    <iframe width="200" height="100" src="<%=videos[i].url%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>			
                 </td>
 				<td>
                     <a class="edit" href="/admin/videos/editVideo/<%=videos[i].id%>">edit</a>
@@ -26,6 +30,6 @@
 	</tbody>
 </table>
 
-<a class="back" href="videos/addVideo">Ajouter une video</a>
+
 
 <script language="javascript" src="/js/index.js"></script>

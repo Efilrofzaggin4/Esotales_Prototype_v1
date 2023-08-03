@@ -46,7 +46,7 @@ export const EditClasses = (req, res) => {
 	pool.query(sql, [id], function (error, rows, fields) {
 		const actus = rows; // Assigner les résultats à la variable `actus`
 	        // appel du template pour édition de classes
-	        res.render('editClasses', { classes: rows[0] });
+	        res.render('layout', {template :'editClasses',  classes: rows[0] });
 	 });
 }
 

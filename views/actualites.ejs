@@ -15,7 +15,7 @@
 		<% for(let i = 0; i < actus.length; i++) { %>
 			<tr data-id="<%=actus[i].id%>">
 				<td>
-					<a href="/actusIndex/<%=actus[i].id%>"><%=actus[i].titre%></a>
+					<%=actus[i].titre%>
 				</td>
 				<td><%=actus[i].contenu.substring(0, 30)%> ...</td>
                 <td><%=actus[i].date.toLocaleDateString()%></td>

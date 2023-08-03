@@ -1,17 +1,21 @@
 <h2>Gestion des classes</h2>
+
+<a class="back" href="/admin/classes/addClasse">Ajouter une classe</a>
+
 <table class="admin-table">
 	<thead>
 	  <th>Titre</th>
 	  <th>Description</th>
 	  <th>Logo</th>
-	  <th>Image de compétence</th>
-	  <th></th>
+	  <th>Image compétences</th>
+	  <th>Image classe</th>
+	  <th>edit/supp</th>
 	</thead>
 	<tbody>
 	  <% for(let i = 0; i < classes.length; i++) { %>
 	  <tr data-id="<%= classes[i].id %>">
 		<td>
-		  <a href="/classes/<%= classes[i].id %>"><%= classes[i].nom %></a>
+		  <%= classes[i].nom %>
 		</td>
 		<td><%= classes[i].description.substring(0, 30) %> ...</td>
 		<td>
@@ -32,7 +36,7 @@
 	</tbody>
   </table>
 
-<a href="/admin/classes/addClasse">ajouter une classe</a>
+
 
 <script language="javascript" src="/js/index.js"></script> 
 
