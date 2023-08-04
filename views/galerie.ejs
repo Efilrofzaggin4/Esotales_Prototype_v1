@@ -1,34 +1,31 @@
 <h2>Galerie multimédia</h2>
-<div>
-  <a class="ancre" href="#section-images">Images</a>
-  <a class="ancre" href="#section-videos">Vidéos</a>
+<div class="ancre-liste">
+  <a class="ancre" href="#section-images">aller à Images</a>
+  <a class="ancre" href="#section-videos">aller à Vidéos</a>
 </div>
 <section id="section-images" class="images">
   <h3>Images</h3>
-    <div class="galerie-images">
-      <% for(let i = 0; i < medias.images.length; i++) { %>
-        <div data-id="<%=medias.images[i].id%>" class="carousel-image-item">
-          <p><%= medias.images[i].titre %></p>
-          <img class="img-galerie" src="<%= medias.images[i].url %>" alt="<%= medias.images[i].titre %>">
-        </div>
-      <% } %>
-    </div>
+        <% for(let i = 0; i < medias.images.length; i++) { %>
+          <div data-id="<%=medias.images[i].id%>" class="image-item">
+            <p><%= medias.images[i].titre %></p>
+            <p><img class="img-galerie" src="<%= medias.images[i].url %>" alt="<%= medias.images[i].titre %>"></p>
+            
+          </div>
+        <% } %>
 </section>
 
-<div>
-  <a class="ancre" href="#section-images">Images</a>
-  <a class="ancre" href="#section-videos">Vidéos</a>
+<div class="ancre-liste">
+  <a class="ancre" href="#section-images">aller à Images</a>
+  <a class="ancre" href="#section-videos">aller à Vidéos</a>
 </div>
 
 <section id="section-videos" class="videos">
   <h3>Vidéos</h3>
-    <div class="galerie-videos">
       <% for(let i = 0; i < medias.videos.length; i++) { %>
-        <div data-id="<%=medias.videos[i].id%>">
+        <div data-id="<%=medias.videos[i].id%>" class="video-item">
             <p><%= medias.videos[i].titre %></p>
             <iframe  src="<%= medias.videos[i].url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"  allowfullscreen ></iframe>
         </div>
       <% } %>
-  </div>
   
 </section>
