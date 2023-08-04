@@ -37,10 +37,10 @@ header {
 }
 .header-image {
   width: 100%;
-  background-image: url("/images/front/ELF.jpg");
+  background-image: url("/images/front/3elfs small mobile.png");
   background-position: center;
   background-size: cover;
-  height: 30rem; 
+  height: 25rem; 
 }
 h1 {
   
@@ -168,7 +168,7 @@ Main du Home
 }
 
 /*********************
-Main de l'index actualité
+Index actualité
 ********************/
 .index-actus {
   display: flex;
@@ -189,14 +189,162 @@ Main de l'index actualité
   color: #ffffff;
 }
 
+.actualité a {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.actualité p {
+  display: flex;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.actu-img {
+  width: 50%;
+  margin: auto;
+  align-self: center;
+  border-radius: 2.5rem
+}
+
+/*********************
+Actualité selectionnée 
+********************/
 .actualité {
   background-color:rgba(255, 255, 255, 50%);
-  border: 1px solid;
   font-size: 1.2rem;
   margin-bottom: 2rem;
   width: 90%;
   border-radius: 2.5rem;
-  justify-content: center; 
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.actualité-selected {
+  background-color:rgba(255, 255, 255, 50%);
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 90%;
+  border-radius: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.actualité-selected p {
+  display: flex;
+}
+.actualité-selected .actu-texte {
+  margin: 1.2rem;
+  font-size: 1.6rem;
+}
+
+/*********************
+classes
+********************/
+
+.classes-index {
+  width: 90%;
+}
+
+.classes-choix {
+  background-color:rgba(255, 255, 255, 50%);
+  border-radius: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+    
+}
+
+.classes-choix a {
+  font-size: 2rem;
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.classes-choix .class-nom {
+  padding-top: 2rem;
+}
+
+.classe {
+  width: 90%;
+  background-color:rgba(255, 255, 255, 50%);
+  border-radius: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.classe h3 {
+  margin-bottom: 0;
+  margin-top: 3rem;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.classe-img {
+  width: 90%;
+  border-radius: 2.5rem;
+}
+
+.skill-img {
+  width: 90%;
+}
+
+/*********************
+Galeries multimédia
+********************/
+.images,
+.videos {
+  width: 90%;
+  background-color:rgba(255, 255, 255, 50%);
+  border-radius: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;  
+}
+
+
+.galerie-images,
+.galerie-videos,
+.img-galerie {
+  width: 90%;
+}
+.img-galerie {
+  height: auto;
+}
+.ancre{
+  text-decoration: none;
+
+}
+
+iframe {
+  width: 90%;
+  height: auto;
+  min-height: 25rem;
 }
 
 /************************ Coté Admin *******************/

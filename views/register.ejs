@@ -1,12 +1,23 @@
-<h1>Inscription</h1>
+<h2>Inscription</h2>
 
-<form action="/register" method="post">
-	<label for="email">Email</label>
-	<input type="text" id="email" name="email">
-    <label for="nom">nom</label> 
-	<input type="text" id="nom" name="nom">
-	<label for="password">Mot de passe</label>
-	<input type="password" id="password" name="password">
+<form class="admin_form" action="/register" method="post">
+	<p>
+		<label for="email">Email</label>
+		<input type="text" id="email" name="email" required>
+	</p>
+	<p>
+		<label for="nom">nom</label> 
+		<input type="text" id="nom" name="nom" required>
+	</p>
+	<p>
+		<label for="password">Mot de passe</label>
+		<input type="password" id="password" name="password" required>
+	</p>
+
+	<p><input type="submit" value="S'inscrire"></p>
 	
-	<input type="submit" value="S'inscrire">
+    
+	
+	
+	
 </form>

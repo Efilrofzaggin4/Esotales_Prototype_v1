@@ -1,9 +1,16 @@
-<h2 class="classes-index-title">Classes</h2>
+
 <section class="classes-index">
+    <h2 class="classes-index-title">Classes</h2>
+
     <% for(let i = 0; i < classes.length; i++) { %>
-        <div data-id="<%= classes[i].id %>">
-            <img class="mini-img" src="/<%= classes[i].classe_logo_url %>" alt="<%= classes[i].nom %>">
-            <a href="/classesIndex/<%= classes[i].id %>"><%= classes[i].nom %></a>
+        
+        <div class="classes-choix" data-id="<%= classes[i].id %>">
+            
+            <a href="/classesIndex/<%= classes[i].id %>">
+                <img class="logo-classe" src="/<%= classes[i].classe_logo_url %>" alt="<%= classes[i].nom %>">
+                <div class="class-nom"><%= classes[i].nom %></div>
+            </a>
+        
         </div>
     <% } %>
 </section>

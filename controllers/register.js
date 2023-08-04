@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import bcrypt from 'bcrypt';
 
 export const Register = function (req, res) {
-    res.render('register');
+    res.render('layout', {template:'register'});
 }
 
 export const RegisterSubmit = function (req, res) {

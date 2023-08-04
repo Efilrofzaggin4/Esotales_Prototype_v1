@@ -1,14 +1,16 @@
-<article data-id="<%=actus.id%>">
+<article data-id="<%=actus.id%>" class="actualité-selected">
 
     <h2><%=actus.titre%></h2>
 
     <p>
+        <img class="actu-img" src="/<%=actus.image_url%>" alt="<%=actus.titre%>">
+    </p>
+
+    <p class="actu-texte">
         <%=actus.contenu%>
     </p>
     
-    <p>
-        <img class="mini-img" src="/<%=actus.image_url%>" alt="<%=actus.titre%>">
-    </p>
+    
     
     <div><%=actus.date.toLocaleDateString()%></div>
 </article>

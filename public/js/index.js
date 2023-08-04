@@ -113,4 +113,10 @@ function deleteClasses(classesId) {
       console.error(error);
       //gestion d'erreur
     });
-  }
+}
+
+/*** Carousel de la galerie multimédia *****/
+
+
+
+

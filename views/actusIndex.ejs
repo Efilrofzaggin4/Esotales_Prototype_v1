@@ -8,14 +8,14 @@
             <a href="/actusIndex/<%=actus[i].id%>"><%=actus[i].titre%></a>
 
             <p>
-                <%=actus[i].contenu.substring(0, 50)%>
+                <img class="actu-img" src="/<%=actus[i].image_url%>" alt="<%=actus[i].titre%>">
             </p>
-            
+
             <p>
-                <img class="mini-img" src="/<%=actus[i].image_url%>" alt="<%=actus[i].titre%>">
+                <%=actus[i].contenu.substring(0, 100)%>
             </p>
             
-            <div><%=actus[i].date.toLocaleDateString()%></div>
+            <p><%=actus[i].date.toLocaleDateString()%></p>
         </article>
     <% } %>
 </section>
