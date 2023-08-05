@@ -1,4 +1,28 @@
 
+/**********FONT**************/
+
+@font-face {
+  font-family : "OpenDyslexic";
+  src : url("/fonts/Opendyslexic-Regular.woff2") format('woff2');
+        /* url("/fonts/OpenDyslexic-Regular.woff"), format("woff"); */
+        font-weight: normal;
+        font-style: normal;
+};
+
+/***********ANIMATION**************/
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
 /************************************
 Normalisation du Layout
 ****************************/
@@ -10,15 +34,14 @@ Normalisation du Layout
 html {
     font-size: 62.5%;
     padding : 0;
-    font-family: 'Roboto', sans-serif;
+    
 }
-
-
 
 body {
     font-size: 1.6rem;
     margin: 0;
     width: 100%;
+    font-family: 'Roboto', sans-serif;
 }
 
 header {
@@ -56,7 +79,6 @@ h1 {
   padding: 1rem 0;
   width: 100%;
   background-color: rgba(78, 65, 45, 58%);
-  font-family: 'Roboto', sans-serif;
   text-align: center;
 }
 
@@ -95,6 +117,11 @@ li.nav-link{
   font-size: larger;
 }
 
+/*********Dyslexique***********/
+
+.dyslexique {
+  font-family: 'OpenDyslexic', regular; 
+}
 
 /*********************
 Main du Home
@@ -453,11 +480,7 @@ FOOTER
 /***************MEDIA QUERIES*******************/
 
 
-/******** pour le desktop
-/* .accueil-admin p:hover{
-  padding: 5rem 7rem;
-  background-color:rgba(255, 255, 255, 75%);
-} */
+
 @media screen and (min-width: 440px){
   
   .header-image {
@@ -621,23 +644,55 @@ FOOTER
 }
 
 @media screen and (min-width: 1100px){
-  
+
+  /***********ANIMATION**************/
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/**Changement des tailles pour la version desktop******/
+
   .header-image {
     
     background-image: url("/images/front/3elfs desktop.png");
     height: 60rem;
   }
 
+  .navbar-list .nav-link :hover {
+    transform: scale(2);
+    color: rgba(0,0,0,100%);
+  }
+
   .home-news {
     width: 30%;
   }
-  
+ 
   .actualité{
     width: 30%;
-  }
+  }  
+
   .classes-choix{
     width: 30%;
   }
+  .classes-choix a:hover{
+      transform: scale(1.5);
+      transform: rotate(-5deg);
+      font-size: 3rem;
+      color: rgb(255, 153, 0);
+      font-style:italic; 
+  }
+
+  .logo {
+    margin-top: 5rem;
+    width: 10rem;
+    animation: rotation 5s linear infinite; 
+  }
+
   .classe-img {
     width: 60%;
   }
@@ -647,6 +702,7 @@ FOOTER
   .image-item {
     width: 30%;
   }
+
   .video-item {
     width: 30%;
   }

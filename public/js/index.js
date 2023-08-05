@@ -115,7 +115,25 @@ function deleteClasses(classesId) {
     });
 }
 
-/*** Carousel de la galerie multimédia *****/
+/****************Mode dyslexique **********************/
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  let modeDyslexiqueActif = localStorage.getItem('etatModeDyslexique') === 'true';
+  let boutonDyslexique = document.getElementById('modeDyslexique');
+
+  boutonDyslexique.classList.toggle('actif', modeDyslexiqueActif);
+  document.body.classList.toggle('dyslexique', modeDyslexiqueActif);
+
+  boutonDyslexique.addEventListener('click', () => {
+    modeDyslexiqueActif = !modeDyslexiqueActif;
+    boutonDyslexique.classList.toggle('actif', modeDyslexiqueActif);
+    document.body.classList.toggle('dyslexique', modeDyslexiqueActif);
+    localStorage.setItem('etatModeDyslexique', modeDyslexiqueActif.toString());
+  });
+});
+
 
 
 
