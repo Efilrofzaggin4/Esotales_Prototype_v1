@@ -1,5 +1,7 @@
 import pool from "../config/database.js";
 
+
+// Affichage de l'index des actualités coté visiteur ordonnés par dates desw plus récentes aux plus anciennes
 export const ActusIndex = (req, res) => {
     let sql = 'SELECT * FROM Actualites ORDER BY date DESC';
   

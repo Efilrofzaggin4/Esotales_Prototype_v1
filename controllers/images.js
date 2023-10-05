@@ -3,6 +3,9 @@ import fs from "fs"
 import formidable from "formidable"
 import { v4 as uuidv4 } from 'uuid';
 
+
+
+/**************FONCTION D'AFFICHAGE DE LA LISTE DES IMAGES EN BDD */
 export const Image = (req, res) => {
   let sql = 'SELECT * FROM Images ORDER BY date DESC';
 
@@ -16,6 +19,7 @@ export const Image = (req, res) => {
   });
 };
 
+/**************FONCTION DE SUPPRESSION D'IMAGES EN BDD */
 export const DeleteImage = (req, res) => {
     
 	//on récupère l'id de l'article à supprimer, il a été passé en paramètre de l'url
@@ -35,6 +39,8 @@ export const DeleteImage = (req, res) => {
 	    }
 	});
 }
+
+//**************FONCTION D'AFFICHAGE DU FORMULAIRE D'EDITION D'IMAGES EN BDD */
 export const EditImage = (req, res) => {
     
 	let id = req.params.id;
@@ -48,6 +54,8 @@ export const EditImage = (req, res) => {
 	        res.render('layout', {template : 'editImage',  images: rows[0] });
 	 });
 }
+
+//**************FONCTION D'ENVOI DES INFOS PASSEES DANS LE FORMULAIRE D'EDITION D'IMAGES EN BDD */
 
 
 export const EditImageSubmit = (req, res) => {
@@ -65,6 +73,17 @@ export const EditImageSubmit = (req, res) => {
    
     form.parse(req, (err, fields, files) => {
         console.log(fields)
+        
+        const editImage = {
+		titre: fields.titre,
+		}
+		const regexTitre = /^[a-zA-Z0-9\sÀ-ÿ.,!?()'-]*$/;
+		
+		if (!regexTitre.test(editImage.titre)) {
+            /** test de la sécurité de l'input titre**/
+            return res.status(400).send("le titre n'est pas valide");
+            
+        }
         
         if (err) {
           console.error(err);
@@ -122,25 +141,3 @@ export const EditImageSubmit = (req, res) => {
     });
 }
 
-// export const EditImageSubmit = (req, res) => {
-    
-// 	let id = req.params.id;
-	
-// 	const updateImage = {
-// 		titre: req.body.titre
-// 	}
-// 	console.log(req.body)
-// 	// requete de modification d'une Actualité  
-// 	let sql = 'UPDATE Images SET ? WHERE id = ?';
-
-// 	pool.query(sql, [updateImage, id], function (error, result, fields) {
-// 	    if (error) {
-// 	        console.log(error)
-// 	        res.status(500).send({
-// 	            error: 'Error when update image'
-// 	        });
-// 	    } else {
-// 	        res.redirect('/admin/images')
-// 	    }
-// 	 });
-// }

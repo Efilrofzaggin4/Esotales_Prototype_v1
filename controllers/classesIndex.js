@@ -1,5 +1,6 @@
 import pool from "../config/database.js";
 
+//***********cette fonction affiche pour l'utilisateur les noms(qui est un lien vers la dites classes)leur logo des classes */
 export const ClassesIndex= (req, res) => {
     let sql = 'SELECT * FROM Classes ORDER BY nom';
   
@@ -13,6 +14,8 @@ export const ClassesIndex= (req, res) => {
     });
   };
 
+
+  //************Cette fonction affiche l'article concernant la classes séléctionnée : compétence, équipement */
   export const ShowSelectedClass = (req, res) => {
     
 	let id = req.params.id;

@@ -5,7 +5,7 @@ const deleteActuButtons = document.querySelectorAll('.js-remove-actu-button');
 deleteActuButtons.forEach(button => {
   button.addEventListener('click', () => {
     const actuId = button.getAttribute('data-id');
-    // Appeler la fonction deletePost avec l'ID de l'article
+    // Appeler la fonction deleteActu avec l'ID de l'article
     deleteActu(actuId);
   });
 });
@@ -20,7 +20,7 @@ function deleteActu(actuId) {
       if (response.ok) {
         const deletedRow = document.querySelector(`tr[data-id="${actuId}"]`);
         if (deletedRow) {
-          deletedRow.remove(); // Supprimer la ligne du tableau correspondant à l'article supprimé
+          deletedRow.remove(); // Supprimer la ligne du tableau correspondant à l'actu supprimé
         }} else {
           throw new Error('Erreur lors de la suppression de l\'article');
         }
@@ -76,7 +76,7 @@ function deleteImage(imageId) {
       if (response.ok) {
         const deletedRow = document.querySelector(`tr[data-id="${imageId}"]`);
         if (deletedRow) {
-          deletedRow.remove(); // Supprimer la ligne du tableau correspondant à la video supprimée
+          deletedRow.remove(); // Supprimer la ligne du tableau correspondant à l'image supprimée
         }} else {
           throw new Error("Erreur lors de la suppression de l'image");
         }
@@ -104,7 +104,7 @@ function deleteClasses(classesId) {
       if (response.ok) {
         const deletedRow = document.querySelector(`tr[data-id="${classesId}"]`);
         if (deletedRow) {
-          deletedRow.remove(); // Supprimer la ligne du tableau correspondant à la video supprimée
+          deletedRow.remove(); // Supprimer la ligne du tableau correspondant à la classe supprimée
         }} else {
           throw new Error("Erreur lors de la suppression de la classes");
         }

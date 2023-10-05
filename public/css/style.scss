@@ -1,0 +1,711 @@
+$couleur-marron:rgba(78, 65, 45, 100%);
+$couleur-gris-transparent: rgba(255, 255, 255, 0.5);
+/**********FONT**************/
+
+@font-face {
+  font-family : "OpenDyslexic";
+  src : url("/fonts/Opendyslexic-Regular.woff2") format('woff2');
+        /* url("/fonts/OpenDyslexic-Regular.woff"), format("woff"); */
+        font-weight: normal;
+        font-style: normal;
+};
+
+/***********ANIMATION**************/
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+/************************************
+Normalisation du Layout
+****************************/
+*{
+  box-sizing: border-box;
+}
+
+
+html {
+    font-size: 62.5%;
+    padding : 0;
+    
+}
+
+body {
+    font-size: 1.6rem;
+    margin: 0;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+  position: relative;
+}
+.log_admin{
+  background-color: $couleur-marron;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+.log_admin a {
+  color:rgba(255, 255, 255, 100%); 
+  text-decoration: none;
+}
+.header-image {
+  width: 100%;
+  background-image: url("/images/front/3elfs small mobile.png");
+  background-position: center;
+  background-size: cover;
+  height: 25rem; 
+}
+h1 {
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 3rem;
+  z-index: 1;
+  align-items: center;
+  margin: 0%;
+  padding: 1rem 0;
+  width: 100%;
+  background-color: rgba(78, 65, 45, 58%);
+  text-align: center;
+}
+
+.navbar-list {
+  list-style-type: none; 
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+  width: 100%; 
+  padding: 0;
+  margin: 0%;
+  background-color: $couleur-marron;
+}
+
+.navbar-list li {
+  margin-right: 1.5rem; 
+  padding: 1rem;
+  width: 100%;
+  border: 0.1rem solid #000; 
+  box-sizing: border-box;
+}
+li.nav-link{
+  margin: 0%;
+  padding: 0%;
+}
+.navbar-list a {
+  color:rgba(255, 255, 255, 100%); 
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  font-size: larger;
+}
+
+/*********Dyslexique***********/
+
+.dyslexique {
+  font-family: 'OpenDyslexic', regular; 
+}
+
+/*********************
+Main du Home
+********************/
+
+.main {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  background-image: url("/images/front/universe_witchcraft.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.main h2 {
+  margin: 0; 
+  text-align: center; 
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+.main {
+  margin: 0;
+  padding: 0;
+  list-style: none; 
+  
+}
+.home-news {
+  padding:  2% 5%;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.home-news{
+  background-color:$couleur-gris-transparent;
+  border-radius: 2.5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.home-news h3 {
+  text-align: center; 
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.home-news .news-content {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  background-color:rgba(255, 255, 255, 100%);
+  border-radius: 3rem;
+  
+}
+
+.home-news img {
+  width: 50%;
+  height: auto;
+  border-radius: 3rem;
+  
+}
+
+.home-news p {
+  width: 50%;
+  font-size: 20px;
+  margin:  1rem 1rem;
+}
+
+/*********************
+Index actualité
+********************/
+.index-actus {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  /* background-image: url("/images/front/paysage-fantasy-multi-tower_2.jpg"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.index-actus h2 {
+  margin: 0; 
+  text-align: center; 
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.actualité a {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.actualité p {
+  display: flex;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.actu-img {
+  width: 50%;
+  margin: auto;
+  align-self: center;
+  border-radius: 2.5rem
+}
+
+/*********************
+Actualité selectionnée 
+********************/
+.actualité {
+  background-color:$couleur-gris-transparent;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  width: 90%;
+  border-radius: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.actualité-selected {
+  background-color:$couleur-gris-transparent;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 90%;
+  border-radius: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.actualité-selected p {
+  display: flex;
+}
+.actualité-selected .actu-texte {
+  margin: 1.2rem;
+  font-size: 1.6rem;
+}
+
+/*********************
+classes
+********************/
+
+.classes-index {
+  width: 90%;
+}
+
+.classes-choix {
+  background-color:$couleur-gris-transparent;
+  border-radius: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+    
+}
+
+.classes-choix a {
+  font-size: 2rem;
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.classes-choix .class-nom {
+  padding-top: 2rem;
+}
+
+.classe {
+  width: 90%;
+  background-color:$couleur-gris-transparent;
+  border-radius: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.classe h3 {
+  margin-bottom: 0;
+  margin-top: 3rem;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.classe-img {
+  width: 90%;
+  border-radius: 2.5rem;
+}
+
+.skill-img {
+  width: 90%;
+}
+
+/*********************
+Galeries multimédia
+********************/
+.images,
+.videos {
+  width: 90%;
+  background-color:$couleur-gris-transparent;
+  border-radius: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;  
+}
+
+.images h3,
+.videos h3 {
+  text-transform: uppercase;
+}
+
+.galerie-images,
+.galerie-videos,
+.img-galerie {
+  width: 90%;
+}
+.img-galerie {
+  height: auto;
+}
+
+.ancre-liste {
+  background-color:$couleur-gris-transparent;
+  padding: 2rem;
+  border-radius: 2.5rem;
+}
+
+.ancre{
+  text-decoration: underline;
+  font-size: 1.3rem;
+  padding: 1rem;
+  color: rgba(0,0,0,100%);
+  text-transform: uppercase;
+}
+
+iframe {
+  width: 90%;
+  min-height: 25rem;
+}
+
+/************************ Coté Admin *******************/
+
+
+/*************
+Accueil admin
+**************/
+.accueil-admin p{
+  margin: 3rem 0;
+  padding: 3rem 5rem;
+  background-color:$couleur-gris-transparent;
+  border-radius: 2.5rem;
+}
+
+/*************
+gestion des différentes sections
+**************/
+.admin-table {
+  width: 90%;
+  border-collapse: collapse;
+  border: 1px solid;
+  margin-bottom: 5rem;
+}
+
+.admin-table th{
+  background-color:rgba(255, 255, 255, 100%);
+  border: 1px solid;
+  font-size: 1.2rem;
+}
+.admin-table td{
+  background-color:$couleur-gris-transparent;
+  border: 1px solid;
+  font-size: 1.2rem;
+}
+
+.mini-img {
+  width: 75%;
+  align-items: center;
+}
+.admin_form {
+  background-color:$couleur-gris-transparent;
+  border: 1px solid;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+.admin_form p {
+  display: flex;
+  justify-content: center;
+}
+.back{
+  color: rgba(255, 255, 255, 100%);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+
+
+
+/*************
+FOOTER
+**************/
+.footer{
+  background-color: $couleur-marron;
+  color: #ffffff;
+}
+
+.reseaux-sociaux h3 {
+  margin-top: 0%;
+  text-align: center;
+}
+
+.logo-reseaux{
+  display: flex;
+  justify-content: space-around; 
+}
+
+
+.fa-brands{
+  font-size: 3rem;
+}
+
+.mentions-legales{
+  text-align: center;
+  margin-top: 3rem;
+}
+.mentions-legales p{
+  margin-bottom: 0;
+}
+
+
+/***************MEDIA QUERIES*******************/
+
+
+
+@media screen and (min-width: 440px){
+  
+  .header-image {
+    
+    background-image: url("/images/front/3elfs Mobile.png");
+    height: 30rem;
+  }
+  
+}
+@media screen and (min-width: 550px){
+  .header-image {
+    
+    background-image: url("/images/front/3elfs1000.png");
+    height: 40rem;
+  }
+  .navbar-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .navbar-list li {
+   display: flex;
+   width: 50%;
+   padding-top: 1.5rem;
+   padding-bottom: 1.5rem;
+  }
+  h2{
+    width: 100%;
+  }
+
+  .home-news{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 47%;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .index-actus,
+  .home {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .actualité{
+    width: 45%;
+    text-align: center;
+  }
+
+  .classes-index{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    margin: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .classes-choix{
+    width: 45%;
+  }
+
+  .classe p {
+    width: 60%;
+    font-size: 2rem;
+  }
+  .classe-img {
+    width: 60%;
+  }
+  
+  .images h3,
+  .videos h3{
+    width: 100%;
+  }
+  #section-images,
+  #section-videos{
+    display: flex;
+  }
+  .images {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    margin: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .image-item {
+    width: 45%;
+    background-color:rgba(255, 255, 255, 75%);
+    margin: 1rem;
+    border-radius: 2.5rem;
+  }
+  .videos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    margin: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .videos p {
+    margin-top: 0.5rem;
+  }
+
+  .video-item {
+    width: 45%;
+    background-color:rgba(255, 255, 255, 75%);
+    margin: 1rem;
+    border-radius: 2.5rem;
+  }
+  iframe {
+    height: 20rem;
+    margin-bottom: 1rem;
+  }
+  
+}
+
+@media screen and (min-width: 900px){
+  
+  .header-image {
+    
+    background-image: url("/images/front/3elfs1000.png");
+    height: 50rem;
+  }
+  
+}
+
+@media screen and (min-width: 1100px){
+
+  /***********ANIMATION**************/
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/**Changement des tailles pour la version desktop******/
+
+  .header-image {
+    
+    background-image: url("/images/front/3elfs desktop.png");
+    height: 60rem;
+  }
+
+  .navbar-list .nav-link :hover {
+    transform: scale(2);
+    color: rgba(0,0,0,100%);
+  }
+
+  .home-news {
+    width: 30%;
+  }
+ 
+  .actualité{
+    width: 30%;
+  }  
+
+  .classes-choix{
+    width: 30%;
+  }
+  .classes-choix a:hover{
+      transform: scale(1.5);
+      transform: rotate(-5deg);
+      font-size: 3rem;
+      color: rgba(255, 153, 0, 100%);
+      font-style:italic; 
+  }
+
+  .logo {
+    margin-top: 5rem;
+    width: 10rem;
+    animation: rotation 5s linear infinite; 
+  }
+
+  .classe-img {
+    width: 60%;
+  }
+  .skill-img {
+    width: 50%;
+  }
+  .image-item {
+    width: 30%;
+  }
+
+  .video-item {
+    width: 30%;
+  }
+}
+

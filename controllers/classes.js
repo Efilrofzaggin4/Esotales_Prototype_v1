@@ -2,6 +2,8 @@ import pool from "../config/database.js";
 import fs from "fs"
 import formidable from "formidable"
 
+
+//************appel du template pour affichage de la liste de toutes les classes en bdd
   export const Classes =  (req, res) => {
   let sql = 'SELECT * FROM Classes ORDER BY nom';
   pool.query(sql, function (error, classes, fields) {
@@ -15,13 +17,13 @@ import formidable from "formidable"
 };
 
 
-
+//**************FONCTION DE SUPPRESSION DE CLASSES EN BDD */
 export const DeleteClasses = (req, res) => {
     
-	//on récupère l'id de l'article à supprimer, il a été passé en paramètre de l'url
+	//*******on récupère l'id de l'article à supprimer, il a été passé en paramètre de l'url
     let id = req.params.id;
 
-	// requete de suppresion en BDD
+	//**************requete de suppresion en BDD
 	let sql = 'DELETE FROM Classes WHERE id = ?';
 
 	pool.query(sql, [id], function (error, result, fields) {
@@ -36,6 +38,7 @@ export const DeleteClasses = (req, res) => {
 	});
 }
 
+//**************FONCTION D'AFFICHAGE DU FORMULAIRE D'EDITION DE CLASSES EN BDD */
 export const EditClasses = (req, res) => {
     
 	let id = req.params.id;
@@ -50,6 +53,7 @@ export const EditClasses = (req, res) => {
 	 });
 }
 
+//**************FONCTION D'ENVOI DES INFOS PASSEES DANS LE FORMULAIRE D'EDITION DE CLASSES EN BDD */
 export const EditClasseSubmit = (req, res) => {
     // récupération des données du formulaire dans req.body 
 	// on utilise les name des input comme clefs de req.body
@@ -65,6 +69,31 @@ export const EditClasseSubmit = (req, res) => {
    
     form.parse(req, (err, fields, files) => {
         console.log(fields)
+        
+        const editClasse = {
+    	nom: fields.nom,
+    	description: fields.description,
+    	équipement: fields.équipement
+        }
+    	const regexNom = /^[a-zA-Z0-9\sÀ-ÿ.,!?()'-]*$/;
+    	const regexDescription =/^[a-zA-Z0-9\sÀ-ÿ\n\r.,!?()'-]*$/;
+	    const regexEquipement =/^[a-zA-Z0-9\sÀ-ÿ\n\r.,!?()'-]*$/;
+	    
+	    if (!regexNom.test(editClasse.nom)) {
+            /** test de la sécurité de l'input titre**/
+            return res.status(400).send("le nom n'est pas valide");
+            
+        }
+        if (!regexDescription.test(editClasse.description)) {
+            /** test de la sécurité de l'input contenu**/
+            return res.status(400).send("la description n'est pas valide");
+        
+        }
+        if (!regexEquipement.test(editClasse.équipement)) {
+            /** test de la sécurité de l'input contenu**/
+            return res.status(400).send("l'équipement n'est pas valide");
+        
+        }
         
         if (err) {
           console.error(err);
@@ -99,12 +128,7 @@ export const EditClasseSubmit = (req, res) => {
         const newCompPath = "public/images/compétences/"+files.competence_image.newFilename+"."+compExtension
         
 
-        // // option 1
-        // if(!authorizedExtention.includes(extension)){
-        //     return res.status(500).send("Le fichier n'a pas la bonne extention")
-        // }
         
-        // option 2
         if(!authorizedExtention2.includes(files.image.mimetype)){
             return res.status(500).send("L'image de classe n'a pas la bonne extension")
         }
@@ -168,17 +192,7 @@ export const EditClasseSubmit = (req, res) => {
         
         
 
-                // Insertion dans la table "Classes" pour le reste des champs
-        // const classeId = uuidv4();
-        //         pool.query('INSERT INTO Classes (id, nom, description, équipement, image_url, classe_logo_url, competence_image_url) VALUES (?, ?, ?, ?, ?, ?, ?)', [classeId, fields.nom, fields.description, fields.équipement, finalImagePath, finalLogoPath, finalCompPath], (error, result) => {
-        //     if (error) {
-        //                 console.log(error);
-        //                 return res.status(500).send("Erreur lors de l'insertion de la classe.");
-        //     }
-
-        //             // Redirection vers gestion de classes
-        //             res.redirect('/admin/classes');
-        //         });
+        
             });
         };
 

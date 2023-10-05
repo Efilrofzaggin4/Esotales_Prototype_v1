@@ -34,8 +34,7 @@ import {ActusIndex, ShowSelectedActu} from "../controllers/actusIndex.js"
 
 //liste des routes
 
-//HOME PAGE
-router.get('/', HomeController);
+
 
 //INSCRIPTION PAGE
 
@@ -118,6 +117,9 @@ router.post('/admin/images/addImage', AddImageSubmit);
 
 
 //SITE COTE VISITEUR
+//HOME PAGE
+router.get('/', HomeController);
+
 
 router.get('/classesIndex', ClassesIndex);
 router.get('/classesIndex/:id', ShowSelectedClass);
@@ -127,14 +129,6 @@ router.get('/galerie', Galerie)
 
 router.get('/actusIndex', ActusIndex)
 router.get('/actusIndex/:id', ShowSelectedActu)
-
-
-
-
-
-
-
-
 
 
 

@@ -2,15 +2,6 @@ import express from "express";
 import session from 'express-session';
 import router from "./routes/router.js";
 import parseurl from "parseurl";
-/*
-----
-----
------
-Faire un changement pour que ce soit l'utilisateur connecté qui soit dans l'id
------
------
-----
-*/
 
 const app = express();
 const port = 8000;
@@ -18,7 +9,7 @@ const hostname = "localhost";
 
 const BASE_URL = `http://${hostname}:${port}`;
 
-// on indique à express où sont les fichiers statiques js, image et css
+//on indique à express où sont les fichiers statiques js, image et css
 app.use(express.static("public"));
 
 //initialisation du système de sessions
@@ -36,12 +27,10 @@ app.set('view options', { pretty: true });
 
 //pour l'utilisation du json à la réception des données formulaire
 app.use(express.json()) 
-app.use(express.urlencoded({ extended: true })) //bien penser à recréer la base de donnée avec char 36 pour id
+app.use(express.urlencoded({ extended: true })) 
 
 
 // app.use(express.static("public"));
-
-
 app.use(function (req, res, next) {
     res.locals.isAdmin = req.session.role === 'admin';
 

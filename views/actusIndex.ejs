@@ -5,7 +5,7 @@
     <% for(let i = 0; i < actus.length; i++) { %>
         <article data-id="<%=actus[i].id%>" class="actualité">
 
-            <a href="/actusIndex/<%=actus[i].id%>"><%=actus[i].titre%></a>
+            <h3><a href="/actusIndex/<%=actus[i].id%>"><%=actus[i].titre%></a></h3>
 
             <p>
                 <img class="actu-img" src="/<%=actus[i].image_url%>" alt="<%=actus[i].titre%>">

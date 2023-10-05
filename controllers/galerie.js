@@ -1,5 +1,8 @@
 import pool from "../config/database.js";
 
+
+//** cette fonction gère la galerie multimédia coté utilisateur : elle prend les infomations 
+//** dans les tables vidéos et images et les affiche à l'utilisateur sur la page galerie
 export default (req, res) => {
   let sql1 = 'SELECT * FROM Images ORDER BY date DESC';
   let sql2 = 'SELECT * FROM Videos ORDER BY date DESC';

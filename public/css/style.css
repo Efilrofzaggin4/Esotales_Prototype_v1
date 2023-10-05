@@ -1,16 +1,13 @@
-
+@charset "UTF-8";
 /**********FONT**************/
-
 @font-face {
-  font-family : "OpenDyslexic";
-  src : url("/fonts/Opendyslexic-Regular.woff2") format('woff2');
-        /* url("/fonts/OpenDyslexic-Regular.woff"), format("woff"); */
-        font-weight: normal;
-        font-style: normal;
-};
-
+  font-family: "OpenDyslexic";
+  src: url("/fonts/Opendyslexic-Regular.woff2") format("woff2");
+  /* url("/fonts/OpenDyslexic-Regular.woff"), format("woff"); */
+  font-weight: normal;
+  font-style: normal;
+}
 /***********ANIMATION**************/
-
 @keyframes rotation {
   from {
     transform: rotate(0deg);
@@ -19,54 +16,50 @@
     transform: rotate(360deg);
   }
 }
-
-
-
-
 /************************************
 Normalisation du Layout
 ****************************/
-*{
+* {
   box-sizing: border-box;
 }
 
-
 html {
-    font-size: 62.5%;
-    padding : 0;
-    
+  font-size: 62.5%;
+  padding: 0;
 }
 
 body {
-    font-size: 1.6rem;
-    margin: 0;
-    width: 100%;
-    font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  margin: 0;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
 }
 
 header {
   position: relative;
 }
-.log_admin{
-  background-color: rgba(78, 65, 45, 100%);
+
+.log_admin {
+  background-color: rgb(78, 65, 45);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-
 }
+
 .log_admin a {
-  color:rgba(255, 255, 255, 100%); 
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
+
 .header-image {
   width: 100%;
   background-image: url("/images/front/3elfs small mobile.png");
   background-position: center;
   background-size: cover;
-  height: 25rem; 
+  height: 25rem;
 }
+
 h1 {
-  
   position: absolute;
   top: 50%;
   left: 50%;
@@ -78,35 +71,37 @@ h1 {
   margin: 0%;
   padding: 1rem 0;
   width: 100%;
-  background-color: rgba(78, 65, 45, 58%);
+  background-color: rgba(78, 65, 45, 0.58);
   text-align: center;
 }
 
 .navbar-list {
-  list-style-type: none; 
+  list-style-type: none;
   display: flex;
-  flex-direction: column; 
-  justify-content: center; 
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: 100%; 
+  width: 100%;
   padding: 0;
   margin: 0%;
-  background-color: rgba(78, 65, 45, 100%);
+  background-color: rgb(78, 65, 45);
 }
 
 .navbar-list li {
-  margin-right: 1.5rem; 
+  margin-right: 1.5rem;
   padding: 1rem;
   width: 100%;
-  border: 0.1rem solid #000; 
+  border: 0.1rem solid #000;
   box-sizing: border-box;
 }
-li.nav-link{
+
+li.nav-link {
   margin: 0%;
   padding: 0%;
 }
+
 .navbar-list a {
-  color:rgba(255, 255, 255, 100%); 
+  color: rgb(255, 255, 255);
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
@@ -118,19 +113,17 @@ li.nav-link{
 }
 
 /*********Dyslexique***********/
-
 .dyslexique {
-  font-family: 'OpenDyslexic', regular; 
+  font-family: "OpenDyslexic", regular;
 }
 
 /*********************
 Main du Home
 ********************/
-
 .main {
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
+  flex-direction: column;
+  align-items: center;
   background-image: url("/images/front/universe_witchcraft.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -139,35 +132,53 @@ Main du Home
 }
 
 .main h2 {
-  margin: 0; 
-  text-align: center; 
+  margin: 0;
+  text-align: center;
   font-size: 2.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   color: #ffffff;
 }
+
 .main {
   margin: 0;
   padding: 0;
-  list-style: none; 
-  
+  list-style: none;
 }
+
+.nous{
+  width:90%;
+  background-color: rgba(255, 255, 255, 0.5);
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1rem;
+  margin-top:1rem;
+  border-radius:2.5rem;
+}
+.nous-img{
+  width:90%;
+  border-radius: 2.5;
+}
+
 .home-news {
-  padding:  2% 5%;
+  padding: 2% 5%;
   max-width: 90%;
   display: flex;
   flex-direction: column;
   margin: auto;
 }
-.home-news{
-  background-color:rgba(255, 255, 255, 50%);
+
+.home-news {
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 2.5rem;
   margin-bottom: 1rem;
   padding: 1rem;
 }
 
 .home-news h3 {
-  text-align: center; 
+  text-align: center;
   font-size: 24px;
   margin-top: 0;
   margin-bottom: 0;
@@ -175,24 +186,22 @@ Main du Home
 
 .home-news .news-content {
   display: flex;
-  align-items: center; 
-  justify-content: space-between; 
-  background-color:rgba(255, 255, 255, 100%);
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
   border-radius: 3rem;
-  
 }
 
 .home-news img {
   width: 50%;
   height: auto;
   border-radius: 3rem;
-  
 }
 
 .home-news p {
   width: 50%;
   font-size: 20px;
-  margin:  1rem 1rem;
+  margin: 1rem 1rem;
 }
 
 /*********************
@@ -200,17 +209,18 @@ Index actualité
 ********************/
 .index-actus {
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
+  flex-direction: column;
+  align-items: center;
   /* background-image: url("/images/front/paysage-fantasy-multi-tower_2.jpg"); */
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
 }
+
 .index-actus h2 {
-  margin: 0; 
-  text-align: center; 
+  margin: 0;
+  text-align: center;
   font-size: 2.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -234,14 +244,14 @@ Index actualité
   width: 50%;
   margin: auto;
   align-self: center;
-  border-radius: 2.5rem
+  border-radius: 2.5rem;
 }
 
 /*********************
 Actualité selectionnée 
 ********************/
 .actualité {
-  background-color:rgba(255, 255, 255, 50%);
+  background-color: rgba(255, 255, 255, 0.5);
   font-size: 1.2rem;
   margin-bottom: 2rem;
   width: 90%;
@@ -251,8 +261,9 @@ Actualité selectionnée
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .actualité-selected {
-  background-color:rgba(255, 255, 255, 50%);
+  background-color: rgba(255, 255, 255, 0.5);
   font-size: 1.2rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -265,9 +276,11 @@ Actualité selectionnée
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .actualité-selected p {
   display: flex;
 }
+
 .actualité-selected .actu-texte {
   margin: 1.2rem;
   font-size: 1.6rem;
@@ -276,20 +289,18 @@ Actualité selectionnée
 /*********************
 classes
 ********************/
-
 .classes-index {
   width: 90%;
 }
 
 .classes-choix {
-  background-color:rgba(255, 255, 255, 50%);
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 2.5rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
-    
 }
 
 .classes-choix a {
@@ -307,7 +318,7 @@ classes
 
 .classe {
   width: 90%;
-  background-color:rgba(255, 255, 255, 50%);
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 2.5rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -342,7 +353,7 @@ Galeries multimédia
 .images,
 .videos {
   width: 90%;
-  background-color:rgba(255, 255, 255, 50%);
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 2.5rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -352,7 +363,7 @@ Galeries multimédia
   align-content: center;
   justify-content: space-between;
   align-items: center;
-  text-align: center;  
+  text-align: center;
 }
 
 .images h3,
@@ -365,21 +376,22 @@ Galeries multimédia
 .img-galerie {
   width: 90%;
 }
+
 .img-galerie {
   height: auto;
 }
 
 .ancre-liste {
-  background-color:rgba(255, 255, 255, 50%);
+  background-color: rgba(255, 255, 255, 0.5);
   padding: 2rem;
   border-radius: 2.5rem;
 }
 
-.ancre{
+.ancre {
   text-decoration: underline;
   font-size: 1.3rem;
   padding: 1rem;
-  color: rgba(0,0,0,100%);
+  color: rgb(0, 0, 0);
   text-transform: uppercase;
 }
 
@@ -389,15 +401,13 @@ iframe {
 }
 
 /************************ Coté Admin *******************/
-
-
 /*************
 Accueil admin
 **************/
-.accueil-admin p{
+.accueil-admin p {
   margin: 3rem 0;
   padding: 3rem 5rem;
-  background-color:rgba(255, 255, 255, 50%);
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 2.5rem;
 }
 
@@ -411,13 +421,14 @@ gestion des différentes sections
   margin-bottom: 5rem;
 }
 
-.admin-table th{
-  background-color:rgba(255, 255, 255, 100%);
+.admin-table th {
+  background-color: rgb(255, 255, 255);
   border: 1px solid;
   font-size: 1.2rem;
 }
-.admin-table td{
-  background-color:rgba(255, 255, 255, 50%);
+
+.admin-table td {
+  background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid;
   font-size: 1.2rem;
 }
@@ -426,30 +437,30 @@ gestion des différentes sections
   width: 75%;
   align-items: center;
 }
+
 .admin_form {
-  background-color:rgba(255, 255, 255, 50%);
+  background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid;
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
+
 .admin_form p {
   display: flex;
   justify-content: center;
 }
-.back{
-  color: rgba(255, 255, 255, 100%);
+
+.back {
+  color: rgb(255, 255, 255);
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
 
-
-
-
 /*************
 FOOTER
 **************/
-.footer{
-  background-color: rgba(78, 65, 45, 100%);
+.footer {
+  background-color: rgb(78, 65, 45);
   color: #ffffff;
 }
 
@@ -458,41 +469,33 @@ FOOTER
   text-align: center;
 }
 
-.logo-reseaux{
+.logo-reseaux {
   display: flex;
-  justify-content: space-around; 
+  justify-content: space-around;
 }
 
-
-.fa-brands{
+.fa-brands {
   font-size: 3rem;
 }
 
-.mentions-legales{
+.mentions-legales {
   text-align: center;
   margin-top: 3rem;
 }
-.mentions-legales p{
+
+.mentions-legales p {
   margin-bottom: 0;
 }
 
-
 /***************MEDIA QUERIES*******************/
-
-
-
-@media screen and (min-width: 440px){
-  
+@media screen and (min-width: 440px) {
   .header-image {
-    
     background-image: url("/images/front/3elfs Mobile.png");
     height: 30rem;
   }
-  
 }
-@media screen and (min-width: 550px){
+@media screen and (min-width: 550px) {
   .header-image {
-    
     background-image: url("/images/front/3elfs1000.png");
     height: 40rem;
   }
@@ -503,16 +506,15 @@ FOOTER
     width: 100%;
   }
   .navbar-list li {
-   display: flex;
-   width: 50%;
-   padding-top: 1.5rem;
-   padding-bottom: 1.5rem;
+    display: flex;
+    width: 50%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
-  h2{
+  h2 {
     width: 100%;
   }
-
-  .home-news{
+  .home-news {
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -539,12 +541,11 @@ FOOTER
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  .actualité{
+  .actualité {
     width: 45%;
     text-align: center;
   }
-
-  .classes-index{
+  .classes-index {
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -559,24 +560,24 @@ FOOTER
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-  .classes-choix{
+  .classes-choix {
     width: 45%;
   }
-
   .classe p {
     width: 60%;
     font-size: 2rem;
   }
+  
+  .nous-img,
   .classe-img {
     width: 60%;
   }
-  
   .images h3,
-  .videos h3{
+  .videos h3 {
     width: 100%;
   }
   #section-images,
-  #section-videos{
+  #section-videos {
     display: flex;
   }
   .images {
@@ -596,7 +597,7 @@ FOOTER
   }
   .image-item {
     width: 45%;
-    background-color:rgba(255, 255, 255, 75%);
+    background-color: rgba(255, 255, 255, 0.75);
     margin: 1rem;
     border-radius: 2.5rem;
   }
@@ -615,14 +616,12 @@ FOOTER
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-
   .videos p {
     margin-top: 0.5rem;
   }
-
   .video-item {
     width: 45%;
-    background-color:rgba(255, 255, 255, 75%);
+    background-color: rgba(255, 255, 255, 0.75);
     margin: 1rem;
     border-radius: 2.5rem;
   }
@@ -630,69 +629,65 @@ FOOTER
     height: 20rem;
     margin-bottom: 1rem;
   }
-  
 }
-
-@media screen and (min-width: 900px){
-  
+@media screen and (min-width: 900px) {
   .header-image {
-    
     background-image: url("/images/front/3elfs1000.png");
     height: 50rem;
   }
-  
 }
-
-@media screen and (min-width: 1100px){
-
+@media screen and (min-width: 1100px) {
   /***********ANIMATION**************/
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-/**Changement des tailles pour la version desktop******/
-
+  /**Changement des tailles pour la version desktop******/
   .header-image {
-    
     background-image: url("/images/front/3elfs desktop.png");
     height: 60rem;
   }
-
   .navbar-list .nav-link :hover {
     transform: scale(2);
-    color: rgba(0,0,0,100%);
+    color: rgb(0, 0, 0);
   }
-
+  
+  .nous-txt{
+    display:flex;
+  }
+  .nous-lorem{
+    display:flex;
+    margin:1rem;
+  }
+  .nous-img{
+    width: 20%;
+    margin-bottom: 2rem;
+  }
   .home-news {
     width: 30%;
   }
- 
-  .actualité{
-    width: 30%;
-  }  
-
-  .classes-choix{
+  .actualité {
     width: 30%;
   }
-  .classes-choix a:hover{
-      transform: scale(1.5);
-      transform: rotate(-5deg);
-      font-size: 3rem;
-      color: rgb(255, 153, 0);
-      font-style:italic; 
+  .classes-choix {
+    width: 30%;
   }
-
+  .classes-choix a:hover {
+    transform: scale(1.5);
+    transform: rotate(-5deg);
+    font-size: 3rem;
+    color: rgb(255, 153, 0);
+    font-style: italic;
+  }
   .logo {
     margin-top: 5rem;
     width: 10rem;
-    animation: rotation 5s linear infinite; 
+    animation: rotation 5s linear infinite;
   }
-
   .classe-img {
     width: 60%;
   }
@@ -702,9 +697,9 @@ FOOTER
   .image-item {
     width: 30%;
   }
-
   .video-item {
     width: 30%;
   }
 }
 
+/*# sourceMappingURL=style.css.map */

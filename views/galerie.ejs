@@ -24,7 +24,7 @@
       <% for(let i = 0; i < medias.videos.length; i++) { %>
         <div data-id="<%=medias.videos[i].id%>" class="video-item">
             <p><%= medias.videos[i].titre %></p>
-            <iframe  src="<%= medias.videos[i].url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"  allowfullscreen ></iframe>
+            <iframe  src="<%= medias.videos[i].url %>" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"  allowfullscreen ></iframe>
         </div>
       <% } %>
   
