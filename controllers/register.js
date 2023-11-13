@@ -17,7 +17,7 @@ export const RegisterSubmit = function (req, res) {
         /** Si l'adresse e-mail entrée dans l'input n'est pas valide renvoi une erreur**/
         return res.status(400).send("l'adresse email n'est pas valide");
         
-    }
+}
     
     
     //***creation de l'utilisateur en base de donnée et hachage du MDP pour plus de securité */

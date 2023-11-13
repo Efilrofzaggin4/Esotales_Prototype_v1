@@ -146,22 +146,6 @@ Main du Home
   list-style: none;
 }
 
-.nous{
-  width:90%;
-  background-color: rgba(255, 255, 255, 0.5);
-  display:flex;
-  flex-wrap:wrap;
-  flex-direction: row;
-  justify-content: center;
-  padding: 1rem;
-  margin-top:1rem;
-  border-radius:2.5rem;
-}
-.nous-img{
-  width:90%;
-  border-radius: 2.5;
-}
-
 .home-news {
   padding: 2% 5%;
   max-width: 90%;
@@ -567,8 +551,6 @@ FOOTER
     width: 60%;
     font-size: 2rem;
   }
-  
-  .nous-img,
   .classe-img {
     width: 60%;
   }
@@ -655,18 +637,6 @@ FOOTER
     transform: scale(2);
     color: rgb(0, 0, 0);
   }
-  
-  .nous-txt{
-    display:flex;
-  }
-  .nous-lorem{
-    display:flex;
-    margin:1rem;
-  }
-  .nous-img{
-    width: 20%;
-    margin-bottom: 2rem;
-  }
   .home-news {
     width: 30%;
   }
@@ -700,6 +670,4 @@ FOOTER
   .video-item {
     width: 30%;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
